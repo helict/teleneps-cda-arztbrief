@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings>
+    <!-- Chapter 1: Release Info (if publication is a release) -->
+    <!-- ========= --><release project="2.16.840.1.113883.3.1937.99.61.39"
+            prefix="teleneps-"
+            signature="20201221T121337"
+            date="2020-12-21T12:13:37"
+            versionLabel="v1.00">
+      <note xmlns:cda="urn:hl7-org:v3"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:hl7="urn:hl7-org:v3"
+            language="de-DE">
+                <div>
+                    <div>Erstes Release nach Abstimmungs- und Kommentierungsverfahren. Release Notes im Vergleich zur Ballot-Spezifikation</div>
+                    <div>
+                        <ul>
+                            <li>Gruppierung eingeführt: Psychotherapeutische, psychosomatische und psychiatrische Anamnese<br clear="none"/>
+                            </li>
+                            <li>Neues Template Biografische Anamnese 1.2.276.0.76.10.3176<br clear="none"/>
+                            </li>
+                            <li>Korrerkter Code für Section Suchtanamnese 1.2.276.0.76.10.3170<br clear="none"/>
+                            </li>
+                            <li>Neues Template Anamnese selbstschädigendes Verhaltens 1.2.276.0.76.10.3177<br clear="none"/>
+                            </li>
+                            <li>Neues Template Sonstige psychische Anamnese 1.2.276.0.76.10.3178<br clear="none"/>
+                            </li>
+                            <li>Korrerkter Code für Section Traumaanamnese/ Anamnese kritischer Lebensereignisse 1.2.276.0.76.10.3140<br clear="none"/>
+                            </li>
+                            <li>Neues Template Psychotherapeutische, psychosomatische und psychiatrische Vorbehandlung 1.2.276.0.76.10.3179<br clear="none"/>
+                            </li>
+                            <li>Gruppierung eingeführt: Organmedizinische Anamnese<br clear="none"/>
+                            </li>
+                            <li>Neues Template Eigenanamnese 1.2.276.0.76.10.3180<br clear="none"/>
+                            </li>
+                            <li>Neues Template Sonstige organmedizinische Anamnese 1.2.276.0.76.10.3181<br clear="none"/>
+                            </li>
+                            <li>Gruppierung eingeführt: Befunde<br clear="none"/>
+                            </li>
+                            <li>Neues Template Körperlicher Befund bei Aufnahme 1.2.276.0.76.10.3182 mit korrektem Code<br clear="none"/>
+                            </li>
+                            <li>Korrerkter Code für Section Organmedizinische Diagnostik 1.2.276.0.76.10.3100<br clear="none"/>
+                            </li>
+                            <li>Korrerkter Code für Section Laborbefunde 1.2.276.0.76.10.3183, bessere Bezeichnung<br clear="none"/>
+                            </li>
+                            <li>Korrerkter Code für Section Psychischer Befund bei Aufnahme 1.2.276.0.76.10.3174<br clear="none"/>
+                            </li>
+                            <li>Gruppierung eingeführt: Behandlung<br clear="none"/>
+                            </li>
+                            <li>Neues Template Einordnung des Krankheitsbildes in den bio-psycho-sozialen Kontext 1.2.276.0.76.10.3184<br clear="none"/>
+                            </li>
+                            <li>Neues Template Behandlungsverlauf 1.2.276.0.76.10.3185</li>
+                        </ul>
+                    </div>
+                </div>
+            </note>
+   </release>
+    
+    <!-- Chapter 2: Mapping based on model list -->
+    <!-- ========= -->
+    <!-- Used to map an instance to a specific Schematron. How to read:
+- For every template-id that is used in instances there is an element map, e.g.
+  <map model="REPC_IN004110UV01" namespace="urn:hl7-org:v3" sch="peri20-counseling-fase-1c.sch" schsvrl="peri20-counseling-fase-1c.xsl"/>
+  or
+  <map templateRoot="2.16.840.1.113883.2.4.6.10.90.59" templateExt="2017-03-27" sch="peri20-counseling-fase-1c.sch" schsvrl="peri20-counseling-fase-1c.xsl"/>
+  <map templateRoot="2.16.840.1.113883.2.4.6.10.90.59" sch="peri20-counseling-fase-1c.sch" schsvrl="peri20-counseling-fase-1c.xsl"/>
+  or 
+  <map rootelement="REPC_IN004110UV01" namespace="urn:hl7-org:v3" sch="peri20-counseling-fase-1c.sch" schsvrl="peri20-counseling-fase-1c.xsl"/>
+  
+  - @model       - optional    - hint as to the XML Schema that could be used
+  - @namespace   - mandatory   - default namespace-uri() of the project and of the instance unless specified otherwise
+  or
+  - templateRoot - mandatory   - in HL7v3 this would be an OID. In other instance types it might be something else, but then this mapping file might need adjusted setup
+  - templateExt  - optional    - in HL7v3 this would be any string found in templateId/@extension
+  or
+  - @rootelement - required    - local-name() of the root element of the instance
+  - @namespace   - mandatory   - namespace-uri() of the root element
+  
+  One of the following is required, normally schsvrl makes sense:
+  - @schsvrl     - conditional - path+file name of the SVRL XSL. The path should be relative to this index/map file
+  - @schtext     - conditional - path+file name of the Text XSL. The path should be relative to this index/map file
+  - @sch         - conditional - path+file name of the original Schematron file. The path should be relative to this index/map file
+    
+  Note that the same template may be part of multiple transactions, hence multiple map element could be present for the same template. The attached Schematron
+  will have different names, but will have the exact same rules (same template, same rules) hence only the first match is needed for validation.
+  
+- As final fallback, when no template-id is found in the instance, code should rely on root element of the instance to determine the Schematron file name ... --><!-- template name: Arztbrieftelenepsambulant -->
+    <map rootelement="ClinicalDocument"
+        namespace="urn:hl7-org:v3"
+        templateRoot="1.2.276.0.76.10.1033"
+        sch="teleneps-cdapab.sch"
+        schsvrl="teleneps-cdapab.xsl"
+        xsd="ClinicalDocument.xsd"/>
+   <map rootelement="ClinicalDocument"
+        namespace="urn:hl7-org:v3"
+        sch="teleneps-cdapab.sch"
+        schsvrl="teleneps-cdapab.xsl"
+        xsd="ClinicalDocument.xsd"/>
+    
+    <!-- Chapter 3: Mapping based on representing templates -->
+    <!-- ========= -->
+    <!-- Used to map a representing template to a specific Schematron. How to read:
+- For every representing template the schematron file and sch svrl xsl conversion file is mentioned
+- The corresponding root element plus its namespace is mentioned 
+- Every transaction represented by this template is named--><template id="1.2.276.0.76.10.1033"
+             effectiveDate="2020-12-18T00:00:00"
+             sch="teleneps-cdapab.sch"
+             schsvrl="teleneps-cdapab.xsl">
+      <root rootelement="ClinicalDocument" namespace="urn:hl7-org:v3"/>
+      <transaction id="2.16.840.1.113883.3.1937.99.61.39.4.54"
+                   effectiveDate="2020-10-06T10:00:48"
+                   statusCode="draft"
+                   name="Erstellung eines Psychosomatisch-psychotherapeutischen Arztbriefs"/>
+   </template>
+</mappings>

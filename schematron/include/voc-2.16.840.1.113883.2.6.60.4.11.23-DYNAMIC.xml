@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             id="2.16.840.1.113883.2.6.60.4.11.23"
+             name="BMPDosiereinheit"
+             displayName="BMP Dosiereinheit"
+             effectiveDate="2017-04-30T00:00:00"
+             statusCode="draft"
+             versionLabel="V2.4"
+             url="http://art-decor.org/decor/services/"
+             ident="pmp-"
+             referencedFrom="teleneps-">
+      <sourceCodeSystem id="2.16.840.1.113883.2.6.60.4.5.4"
+                        identifierName="pmp-codesystem-4"
+                        canonicalUri="urn:oid:2.16.840.1.113883.2.6.60.4.5.4"
+                        canonicalUriDSTU2="urn:oid:2.16.840.1.113883.2.6.60.4.5.4"
+                        canonicalUriSTU3="urn:oid:2.16.840.1.113883.2.6.60.4.5.4"
+                        canonicalUriR4="urn:oid:2.16.840.1.113883.2.6.60.4.5.4"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="#"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Messlöffel"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Messlöffel</desc>
+                </concept>
+                <concept code="0"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Messbecher"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Messbecher</desc>
+                </concept>
+                <concept code="1"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Stück"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Stück</desc>
+                </concept>
+                <concept code="2"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Pkg."
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Packungen</desc>
+                </concept>
+                <concept code="3"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Flasche"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Flasche</desc>
+                </concept>
+                <concept code="4"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Beutel"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Beutel</desc>
+                </concept>
+                <concept code="5"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Hub"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Hub</desc>
+                </concept>
+                <concept code="6"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Tropfen"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Tropfen</desc>
+                </concept>
+                <concept code="7"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Teelöffel"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Teelöffel</desc>
+                </concept>
+                <concept code="8"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Esslöffel"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Esslöffel</desc>
+                </concept>
+                <concept code="9"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="E"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Einheiten</desc>
+                </concept>
+                <concept code="a"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Tasse"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Tasse</desc>
+                </concept>
+                <concept code="b"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Applikatorfüllung"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Applikatorfüllung</desc>
+                </concept>
+                <concept code="c"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Augenbadewanne"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Augenbadewanne</desc>
+                </concept>
+                <concept code="d"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Dosierbriefchen"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Dosierbriefchen</desc>
+                </concept>
+                <concept code="e"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Dosierpipette"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Dosierpipette</desc>
+                </concept>
+                <concept code="f"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Dosierspritze"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Dosierspritze</desc>
+                </concept>
+                <concept code="g"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Einzeldosis"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Einzeldosis</desc>
+                </concept>
+                <concept code="h"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Glas"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Glas</desc>
+                </concept>
+                <concept code="i"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Likörglas"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Likörglas</desc>
+                </concept>
+                <concept code="j"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Messkappe"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Messkappe</desc>
+                </concept>
+                <concept code="k"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Messschale"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Messschale</desc>
+                </concept>
+                <concept code="l"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Mio E"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Million Einheiten</desc>
+                </concept>
+                <concept code="m"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Mio IE"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Million Internationale Einheiten</desc>
+                </concept>
+                <concept code="n"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Pipettenteilstrich"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Pipettenteilstrich</desc>
+                </concept>
+                <concept code="o"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="Sprühstoß"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Sprühstoß</desc>
+                </concept>
+                <concept code="p"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="IE"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Internationale Einheiten, Immunisierungseinheit oder Insulineinheit</desc>
+                </concept>
+                <concept code="q"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="cm"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Zentimeter</desc>
+                </concept>
+                <concept code="r"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="l"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Liter</desc>
+                </concept>
+                <concept code="s"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="ml"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Milliliter</desc>
+                </concept>
+                <concept code="t"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="g"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Gramm</desc>
+                </concept>
+                <concept code="u"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="kg"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Kilogramm</desc>
+                </concept>
+                <concept code="v"
+                  codeSystem="2.16.840.1.113883.2.6.60.4.5.4"
+                  displayName="mg"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Milligramm</desc>
+                </concept>
+            </conceptList>
+   </valueSet>
+</valueSets>

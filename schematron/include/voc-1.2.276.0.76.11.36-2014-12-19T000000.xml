@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             statusCode="deprecated"
+             id="1.2.276.0.76.11.36"
+             name="IHEXDShealthcareFacilityTypeCode"
+             displayName="IHEXDS healthcareFacilityTypeCode"
+             effectiveDate="2014-12-19T00:00:00"
+             url="http://art-decor.org/decor/services/"
+             ident="ihede-"
+             referencedFrom="teleneps-">
+      <desc language="en-US">
+                <b>healthcareFacilityTypeCode (XDSDocumentEntry)</b>
+                <br/>This code for an XDS Document represents the type of organizational setting of the clinical encounter during which the documented act occurred.</desc>
+      <sourceCodeSystem id="1.3.6.1.4.1.19376.3.276.5.2"
+                        identifierName=""
+                        canonicalUri="urn:oid:1.3.6.1.4.1.19376.3.276.5.2"
+                        canonicalUriDSTU2="urn:oid:1.3.6.1.4.1.19376.3.276.5.2"
+                        canonicalUriSTU3="urn:oid:1.3.6.1.4.1.19376.3.276.5.2"
+                        canonicalUriR4="urn:oid:1.3.6.1.4.1.19376.3.276.5.2"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="PRA"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Arztpraxis"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Arbeitsplatz einer oder mehrerer niedergelassenen Ärztinnen. Umfasst sowohl den klassischen "Einzelsitz", wie auch die Gemeinschaftspraxis oder die Praxisgemeinschaft. Auch mobile Arztpraxen, die <a shape="rect"
+                  class=""
+                  href="https://www.gbe-bund.de/glossar/Dialyseversorgungsarten.html"
+                  target="_blank"
+                  title="Dialyseversorgungsarten nach GBE">ambulante Zentrumsdialyse</a> und Zahnarztpraxen werden durch diesen Wert abgedeckt. Ebenso werden niedergelassene Laborarztpraxen und von ärztlichen Psychotherapeuten geführte Arztpraxen über diesen Wert
+                        abgedeckt. </desc>
+                </concept>
+                <concept code="HEB"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Hebamme/Geburtshaus"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine freiberuflich tätige Hebamme; bzw. eine in Kooperation mit anderen Hebammen tätige Hebamme. Dieser Wert deckt auch Geburtshäuser als von Hebammen betriebene außerklinische Einrichtungen ab.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="APD"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Ambulanter Pflegedienst"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Sozialstationen und gewerblich betriebene ambulante Pflegedienste, die Patienten in der eigenen häuslichen Umgebung betreuben, aber keine ärztlichen Tätigkeiten durchführen.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="HOS"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Hospiz"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine stationäre oder ambulante Einrichtung der Sterbebegleitung. Dies umfaßt sowohl Pflegeheim-ähnliche Einrichtungen, wie auch Einrichtungen die den Patienten in der eigenen häuslichen Umgebung betreuen. Sowohl Einrichtungen unter ärztlicher Leitung, wie auch unter pflegerischer Leitung werden hier zusammengefasst.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="MVZ"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Medizinisches Versorgungszentrum"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Einrichtung zur ambulanten medizinischen Versorgung nach §95 SGB V<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="PFL"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Pflegeheim"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine Einrichtung zur Unterbringung und Versorgung pflegebedürftiger Menschen. Umfaßt Altenpflegeheime und Pflegeheime für Menschen mit Behinderung. Die Einrichtungen versorgen Menschen üblicherweise langfristig, aber auch Kurzzeitpflege der genannten Personengruppen ist durch diesen Wert abgedeckt.</desc>
+                </concept>
+                <concept code="REH"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="medizinische Rehabilitation"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine ambulante, teilstationäre oder stationäre Einrichtung der medizinischen Rehabilitation unter ärztlicher Leitung. Darunter fallen sowohl Reha-Kliniken als auch dezentrale Organisationsformen aus dem ambulanten Sektor.</desc>
+                </concept>
+                <concept code="TZM"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Telemedizinisches Zentrum"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine dedizierte Einrichtung die ausschliesslich auf die telemedizinische Betreuung von Patienten abzielt. Dies umfaßt sowohl dedizierte Care Management Organisationen, wie auch Telemonitoring-Zentren. Dokumente die im Rahmen von telemedizinischen Dienstleistungen von Krankenhäusern oder niedergelassenen Ärzten erbracht werden, sollten nicht mit diesem Wert gekennzeichnet werden, sondern mit dem Wert für Krankenhäuser bzw. Arztpraxen.</desc>
+                </concept>
+                <concept code="KHS"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Krankenhaus"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine Einrichtung die als Krankenhaus nach dem Krankenhausfinanzierungsgesetz (KHG) zu verstehen ist, mit Ausnahme von Reha-Kliniken. Dazu gehören auch Zahnkliniken. Zusätzlich fallen unter diesen Wert auch Krankenhäuser auf die das KHG keine Anwendung findet (siehe §3, z.B. im Straf- oder Maßregelvollzug, Polizeikrankenhäuser, ...), solange es sich nicht um Einrichtungen der medizinischen Rehabilitation handelt.<br clear="none"/>Für Dokumente aus der Abteilung Krankenhausapotheke sollte immer der Wert für "Krankenhaus" verwendet werden. Auch bei
+                        vornehmlich telemedizinisch erbrachten Leistungen eines Krankenhauses (z.B. Teleradiologie) sollte der Wert für "Krankenhaus" verwendet werden.<br clear="none"/>Für angeschloßene, aber selbsständige Einrichtungen, wie z.B. ein zum Krankenhaus gehöriges MVZ oder Hospiz, sollte der spezifischere Wert für den Einrichtungstyp verwendet werden. Dazu zählen auch ausgegründete Labore, die als Arztpraxis abgebildet werden, da sie eine entsprechende KV-Zulassung benötigen.<br clear="none"/>Psychotherapeutische, psychatrische und psychosomatische Abteilungen von Krankenhäusern
+                        und eigenständige Fachkliniken aus diesem Bereich werden auch mit diesem Wert abgedeckt, unabhängig davon ob die Dienste stationär, als Tagesklinik oder ambulant angeboten werden.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="HEI"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="nicht-ärztliche Heilberufs-Praxis"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Von nicht-ärztlichen Heilberuflern betriebene Einrichtungen zur Beratung, Therapie oder Betreuung. Darunter fallen Praxen von Heilpraktikerinnen, Physiotherapeutinnen, Ergotherapeutinnen, Podologinnen, Masseurinnen, Logopädinnen, Sprachtherapeutinnen, Diätassistentinnen, sowie <span style="line-height: 15.8599996566772px;">human-medizinische Beratungsstellen</span>. Auch nicht-ärztliche <span style="line-height: 15.8599996566772px;">psychotherapeutische Praxen, z.B. von Diplom oder Master-Psychologen, gehören dazu.</span>
+                        <br clear="none"/>Dokumente von freiberuflichen Hebammen fallen nicht in diese Gruppe sondern sind mit dem Wert für "Hebamme/Geburtshaus" zu kennzeichnen.<br clear="none"/>Dokumente von Pflegediensten oder freiberuflichen Pflegekräften fallen nicht in diese Gruppe sondern sind mit dem Wert für "Ambulante Pflegedienste" zu kennzeichnen.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="BHR"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Gesundheitsbehörde"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Staatliche oder kommunale Gesundheitsbehörde.</desc>
+                </concept>
+                <concept code="PAT"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Patient außerhalb der Betreuung"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Dieser Wert kann zur Kennzeichnung der Herkunft von Dokumenten verwendet werden, die der Patient selbstständig erstellt und eingestellt hat, zum Beispiel über ein Patientenportal oder eine Smartphone-App. Daten die vom Patienten über eine solche Lösung stellvertretend für einen Heilberufler eingestellt werden (z.B. gescannter Arztbrief, DICOM-DVD) sollten nicht diesen Wert verwenden, sondern den für den Heilberufler vorgesehenen Wert.</desc>
+                </concept>
+                <concept code="APO"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Apotheke"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine Einrichtung zur Abgabe und ggf. Lagerung oder Herstellung von Arzneimitteln. Dieser Wert sollte nicht zur Kennzeichnung von Daten aus Krankenhausapotheken verwendet werden.</desc>
+                </concept>
+                <concept code="HAN"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="medizinisch-technisches Handwerk"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Eine Einrichtung des medizinisch-technischen Handwerks, wie Augenoptiker, Hörakustiker-Fachgeschäft, Diätkoch, Orthopädische Schuhmacher, sowie Orthopädische Fachgeschäfte und Sanitätshäuser.</desc>
+                </concept>
+                <concept code="RTN"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Rettungsdienst"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Einrichtungen des zivilen Rettungsdienst, wie z.B. Rettungswachen, Wasserrettung, etc. </desc>
+                </concept>
+                <concept code="BER"
+                  codeSystem="1.3.6.1.4.1.19376.3.276.5.2"
+                  displayName="Ärztlicher Bereitschaftsdienst"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Der ärztliche Bereitschaftsdienst wird auch als <span style="line-height: 15.8599996566772px;">Kassenärztliche Notdienst bezeichnet. Er wird häufig durch Niedergelassene Ärzte durchgeführt und von </span>der Kassenärztlichen Vereinigungen organisiert, da diese die Verantwortung für die Sicherstellung der medizinischen Versorgung auch außerhalb der üblichen Öffnungszeiten hat. Der Dienst ist vom Rettungsdienst zu unterscheiden, der auf speziell ausgebildete Notärzte zurückgreift.</desc>
+                </concept>
+            </conceptList>
+   </valueSet>
+</valueSets>

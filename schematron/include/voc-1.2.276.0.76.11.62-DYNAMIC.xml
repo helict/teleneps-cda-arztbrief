@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             id="1.2.276.0.76.11.62"
+             name="Diagnosetypendeutschland"
+             displayName="Diagnosetypen in Deutschland"
+             effectiveDate="2013-02-15T00:00:00"
+             statusCode="draft"
+             url="http://art-decor.org/decor/services/"
+             ident="hl7de-"
+             referencedFrom="teleneps-">
+      <sourceCodeSystem id="2.16.840.1.113883.6.1"
+                        identifierName="Logical Observation Identifier Names and Codes"
+                        canonicalUri="http://loinc.org"
+                        canonicalUriDSTU2="http://loinc.org"
+                        canonicalUriSTU3="http://loinc.org"
+                        canonicalUriR4="http://loinc.org"/>
+      <sourceCodeSystem id="1.2.276.0.76.5.342"
+                        identifierName=""
+                        canonicalUri="urn:oid:1.2.276.0.76.5.342"
+                        canonicalUriDSTU2="urn:oid:1.2.276.0.76.5.342"
+                        canonicalUriSTU3="urn:oid:1.2.276.0.76.5.342"
+                        canonicalUriR4="urn:oid:1.2.276.0.76.5.342"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="29308-4"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Diagnosis"
+                  level="0"
+                  type="L">
+                    <designation language="de-DE"
+                         type="preferred"
+                         displayName="Diagnose, nicht näher spezifiziert"/>
+                </concept>
+                <concept code="52534-5"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Principal Diagnosis"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Hauptdiagnose"/>
+                </concept>
+                <concept code="81885-6"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Secondary Diagnosis"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Nebendiagnose"/>
+                    <designation language="de-DE" type="synonym" displayName="Sekundärdiagnose"/>
+                </concept>
+                <concept code="RFFDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Überweisungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="ENTDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Einweisungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="TRFDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Verlegungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="8646-2"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Hospital admission diagnosis"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Aufnahmediagnose"/>
+                    <desc language="de-DE">
+                        <br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="CDDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Fachabteilungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="CDXDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Fachabteilungszusatzdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="CDTDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Fachabteilung Behandlungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="CDDISDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Fachabteilung Entlassdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="CDADMDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Fachabteilung Aufnahmediagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="SUCCDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Nachfolgediagnose (mit anschließender Arbeitsunfähigkeit)"
+                  level="1"
+                  type="L"/>
+                <concept code="8651-2"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Hospital discharge Dx"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Entlassungsdiagnose"/>
+                </concept>
+                <concept code="TDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Behandlungsdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="PERMDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Dauerdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="APERMDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Anamnestische Dauerdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="BPERMDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Behandlungsrelevante Dauerdiagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="11300-1"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="ED diagnosis"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Notfalldiagnose"/>
+                    <desc language="de-DE">
+                        <br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="46610-2"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Payment diagnosis"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE" type="preferred" displayName="Abrechnungsdiagnose"/>
+                    <desc language="de-DE">
+                        <br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="POSTOPDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Postoperative Diagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="PREOPDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Präoperativ Diagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="ADR"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="UAW - Beobachtete Unerwünschte Nebenwirkung"
+                  level="1"
+                  type="L"/>
+                <concept code="ADRPD"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="UAW - Grunderkrankung"
+                  level="1"
+                  type="L"/>
+                <concept code="ADRCCD"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="UAW - Begleiterkrankung"
+                  level="1"
+                  type="L"/>
+                <concept code="IFSGDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Infektionsschutzgesetz - Diagnosen"
+                  level="1"
+                  type="L"/>
+                <concept code="IFSGSUSPDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Infektionsschutzgesetz - Verdachtsdiagnosen"
+                  level="1"
+                  type="L"/>
+                <concept code="IFSGDD"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Infektionsschutzgesetz - Differentialdiagnosen"
+                  level="1"
+                  type="L"/>
+                <concept code="79378-6"
+                  codeSystem="2.16.840.1.113883.6.1"
+                  displayName="Cause of death"
+                  level="1"
+                  type="L">
+                    <designation language="de-DE"
+                         type="preferred"
+                         displayName="Todesursache (unmittelbar zum Tode führende Krankheit)"/>
+                </concept>
+                <concept code="CCCOND"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Begleitkrankheiten"
+                  level="1"
+                  type="L"/>
+                <concept code="EXTCS"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Äußere Ursache"
+                  level="1"
+                  type="L"/>
+                <concept code="NEO"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Neubildung"
+                  level="1"
+                  type="L"/>
+                <concept code="UAE"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="unerwünschtes Arzneimittelereignis"
+                  level="1"
+                  type="L"/>
+                <concept code="UAW"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="unerwünschte Arzneimittelwirkung"
+                  level="1"
+                  type="L"/>
+                <concept code="CAREDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Pflegediagnose"
+                  level="1"
+                  type="L"/>
+                <concept code="SYMDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="Symptom"
+                  level="1"
+                  type="L"/>
+                <concept code="OTHDX"
+                  codeSystem="1.2.276.0.76.5.342"
+                  displayName="sonstige Diagnose"
+                  level="1"
+                  type="L"/>
+            </conceptList>
+   </valueSet>
+</valueSets>

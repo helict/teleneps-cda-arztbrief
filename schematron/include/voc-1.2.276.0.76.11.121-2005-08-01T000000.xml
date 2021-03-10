@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             id="1.2.276.0.76.11.121"
+             name="S_ICD_DIAGNOSESICHERHEIT"
+             displayName="S_ICD_DIAGNOSESICHERHEIT"
+             effectiveDate="2005-08-01T00:00:00"
+             statusCode="final"
+             url="http://art-decor.org/decor/services/"
+             ident="kbvde-"
+             referencedFrom="aktin-">
+      <desc language="de-DE">Die Diagnosesicherheit gibt an, wie sicher eine gestellte Diagnose ist. Es handelt sich hier um Zusatzkennzeichen zur Diagnose (ICD-10) im ambulanten Bereich. Die Angaben zur Diagnosesicherheit entsprechen der Vorgabe im KVDT.</desc>
+      <sourceCodeSystem id="1.2.276.0.76.3.1.1.5.1.21"
+                        identifierName=""
+                        canonicalUri="urn:oid:1.2.276.0.76.3.1.1.5.1.21"
+                        canonicalUriDSTU2="urn:oid:1.2.276.0.76.3.1.1.5.1.21"
+                        canonicalUriSTU3="urn:oid:1.2.276.0.76.3.1.1.5.1.21"
+                        canonicalUriR4="urn:oid:1.2.276.0.76.3.1.1.5.1.21"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="A"
+                  codeSystem="1.2.276.0.76.3.1.1.5.1.21"
+                  displayName="ausgeschlossen"
+                  level="0"
+                  type="L"/>
+                <concept code="G"
+                  codeSystem="1.2.276.0.76.3.1.1.5.1.21"
+                  displayName="gesicherte Diagnose"
+                  level="0"
+                  type="L"/>
+                <concept code="V"
+                  codeSystem="1.2.276.0.76.3.1.1.5.1.21"
+                  displayName="Verdacht auf / zum Ausschluss von"
+                  level="0"
+                  type="L"/>
+                <concept code="Z"
+                  codeSystem="1.2.276.0.76.3.1.1.5.1.21"
+                  displayName="Zustand nach"
+                  level="0"
+                  type="L"/>
+            </conceptList>
+   </valueSet>
+</valueSets>

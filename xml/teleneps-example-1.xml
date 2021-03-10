@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/cda.xsl"?>
+<?xml-model href="../schematron/teleneps-cdapab.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pharm="urn:ihe:pharm:medication" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+    <realmCode code="DE"/>
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="1.2.276.0.76.10.1033"/>
+    <id root="1.2.3.999" extension="--example only--"/>
+    <code code="75443-2" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Discharge summary"/>
+    <title>Stationärer Entlassbrief, Klinik und Poliklinik für Psychotherapie und Psychosomatik, Universitätsklinikum Gustav Fritz Wendinger</title>
+    <effectiveTime value="20201220191517"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="normal"/>
+    <languageCode code="de-DE"/>
+    <setId root="1.2.3.999" extension="--example only--"/>
+    <versionNumber value="1"/>
+    <!-- Patient -->
+    <recordTarget typeCode="RCT" contextControlCode="OP" >
+        <patientRole classCode="PAT" >
+            <id root="1.2.276.0.76.4.8" extension="M123456789" />
+            <addr>
+                <streetAddressLine>Musterstr. 1</streetAddressLine>
+                <postalCode>01234</postalCode>
+                <city>Musterstadt</city>
+            </addr>
+            <patient>
+                <name>
+                    <given>Max</given>
+                    <family>Mustermann</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19690101" />
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <!-- Autor -->
+    <author typeCode="AUT" contextControlCode="OP">
+        <time value="20201220"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <id root="1.2.3.999" extension="--example only--"/>
+            <telecom value="tel:+1-12345678"/>
+            <assignedPerson>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Samanta</given>
+                    <family>Mentaler</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.276.0.76.4.17" extension="522222200" />
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <!-- Verantwortliche Organisation für das erstellte Dokument -->
+    <custodian typeCode="CST">
+        <assignedCustodian>
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <!-- Informations-Empfänger -->
+    <informationRecipient typeCode="PRCP">
+        <intendedRecipient>
+            <id root="1.2.3.999" extension="--example only--"/>
+            <informationRecipient>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Mustafa</given>
+                    <family>Muster</family>
+                </name>
+            </informationRecipient>
+            <receivedOrganization>
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Psychotraumatologie-Praxis Dr. Muster Muster</name>
+                <addr>
+                    <streetAddressLine>Musterstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    <!-- Vor dem Gesetz verantwortliche Unterzeichner des Dokumentes -->
+    <legalAuthenticator typeCode="LA" contextControlCode="OP">
+        <time value="20201220191517"/>
+        <signatureCode code="I"/>
+        <assignedEntity>
+            <id root="1.2.3.999" extension="--example only--"/>
+            <telecom value="tel:+1-12345678"/>
+            <assignedPerson>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Samanta</given>
+                    <family>Mentaler</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <telecom value="tel:+1-12345678"/>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <!-- include template 1.2.276.0.76.10.2027 'CDA encompassingEncounter Patientenkontakt' (2014-08-25T00:00:00) 0..1 O -->
+    <componentOf typeCode="COMP">
+        <encompassingEncounter classCode="ENC" moodCode="EVN">
+            <id root="1.2.3.999" extension="--example only--"/>
+            <code code="NONAC" codeSystem="2.16.840.1.113883.5.4" displayName="inpatient non-acute"/>
+            <effectiveTime>
+                <low value="20201210182300"/>
+                <high value="20201220191517"/>
+            </effectiveTime>
+            <responsibleParty>
+                <assignedEntity>
+                    <!-- include template 1.2.276.0.76.10.90012 'CDA Assigned Entity Elements' (2011-12-19T00:00:00)   -->
+                    <id root="1.2.3.999" extension="--example only--"/>
+                    <telecom value="tel:+1-12345678"/>
+                    <assignedPerson>
+                        <name>
+                            <prefix qualifier="AC">Dr.</prefix>
+                            <given>Samanta</given>
+                            <family>Mentaler</family>
+                        </name>
+                    </assignedPerson>
+                </assignedEntity>
+            </responsibleParty>
+            <!-- include template 1.2.276.0.76.10.90021 'Encounter Location' (2014-08-25T00:00:00) 0..1 R -->
+            <location typeCode="LOC">
+                <healthCareFacility classCode="SDLOC">
+                    <serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                        <id root="1.2.3.999" extension="--example only--"/>
+                        <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                        <telecom value="tel:+1-12345678"/>
+                        <addr>
+                            <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                            <postalCode>01234</postalCode>
+                            <city>Musterstadt</city>
+                        </addr>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+        </encompassingEncounter>
+    </componentOf>
+    <component typeCode="COMP" contextConductionInd="true">
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3001"/>
+                    <code code="X-SALUT" codeSystem="2.16.840.1.113883.6.1"/>
+                    <text>Sehr geehrte Kollegin, sehr geehrter Kollege,<br/>wir berichten über den Patienten Max Mustermann, geboren am 01.01.1969 wohnhaft in Musterstr. 1, 01234 Musterstadt, der sich in der Zeit vom 10.12.2020 bis 20.12.2020 in unserer stationären Behandlung befand.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3001 'Anrede' (2013-01-10T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3027"/>
+                    <code code="11535-2" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Entlassungsdiagnosen</title>
+                    <text><content ID="diag-1">11.12.2020 F43.1 Posttraumatische Belastungsstörung</content></text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.276.0.76.10.4079"/>
+                            <id root="1.2.3.999" extension="--example only--"/>
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20201211"/>
+                            </effectiveTime>
+                            <author typeCode="AUT" contextControlCode="OP" >
+                                <time value="20201211" />
+                                <assignedAuthor classCode="ASSIGNED">
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <prefix qualifier="AC">Dr.</prefix>
+                                            <given>Samanta</given>
+                                            <family>Mentaler</family>
+                                        </name>
+                                    </assignedPerson>
+                                    <representedOrganization>
+                                        <id root="1.2.3.999" extension="--example only--"/>
+                                        <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                                        <telecom value="tel:+1-12345678"/>
+                                        <addr>
+                                            <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                                            <postalCode>01234</postalCode>
+                                            <city>Musterstadt</city>
+                                        </addr>
+                                    </representedOrganization>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Diagnose Observation-->
+                                    <templateId root="1.2.276.0.76.10.4080"/>
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <code code="8651-2" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital discharge Dx"/>
+                                    <text>
+                                        <reference value="#diag-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20201211"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="F43.1" codeSystem="1.2.276.0.76.5.413" displayName="Posttraumatische Belastungsstörung"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+                <!-- template 1.2.276.0.76.10.3027 'Entlassungsdiagnose' (2017-02-01T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT">
+                    <templateId root="1.2.276.0.76.10.3139"/>
+                    <code code="46239-0" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Beschwerden bei Vorstellung</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3139 'Beschwerden bei Vorstellung' (2019-06-02T14:26:43) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3176"/>
+                    <code code="67851-6" codeSystem="2.16.840.1.113883.6.1" displayName="Admission evaluation note"/>
+                    <title>Biografische Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3176 'Biografische Anamnese' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3141"/>
+                    <code code="78306-8" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health History and physical"/>
+                    <title>Psychosoziale Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3141 'Psychosoziale Anamnese' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3170"/>
+                    <code code="28243-4" codeSystem="2.16.840.1.113883.6.1" displayName="Abuse Behavior"/>
+                    <title>Suchtanamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3170 'Suchtanamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3172"/>
+                    <code code="61144-2" codeSystem="2.16.840.1.113883.6.1" displayName="Diet and nutrition Narrative"/>
+                    <title>Anamnese des Essverhaltens</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3172 'Anamnese des Essverhaltens' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3177"/>
+                    <code code="93487-7" codeSystem="2.16.840.1.113883.6.1" displayName="Subject engaged in self-injurious behavior, intent unknown Lifetime"/>
+                    <title>Anamnese selbstschädigendes Verhaltens</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3177 'Anamnese selbstschädigendes Verhaltens' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3178"/>
+                    <code code="X-OHMENT" codeSystem="2.16.840.1.113883.6.1" displayName="Other mental history"/>
+                    <title>Sonstige psychische Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3178 'Sonstige psychische Anamnese' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3140"/>
+                    <code code="45420-7" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health history"/>
+                    <title>Traumaanamnese/Anamnese kritischer Lebensereignisse</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3140 'Traumaanamnese/ Anamnese kritischer Lebensereignisse' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3179"/>
+                    <code code="45415-7" codeSystem="2.16.840.1.113883.6.1" displayName="History of stay at mental health/psychiatric setting"/>
+                    <title>Psychotherapeutische, psychosomatische und psychiatrische Vorbehandlung</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3179 'Psychotherapeutische, psychosomatische und psychiatrische Vorbehandlung' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3180"/>
+                    <code code="11339-9" codeSystem="2.16.840.1.113883.6.1" displayName="History of Major illnesses and injuries"/>
+                    <title>Eigenanamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3180 'Eigenanamnese' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3024"/>
+                    <code code="10157-6" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Familienanamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3024 'Familienanamnese' (2013-12-30T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3143"/>
+                    <code code="10189-9" codeSystem="2.16.840.1.113883.6.1" displayName="Review of systems overview - Reported"/>
+                    <title>Vegetative Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3143 'Vegetative Anamnese' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3169"/>
+                    <code code="89221-6" codeSystem="2.16.840.1.113883.6.1" displayName="Gynecology History and physical note"/>
+                    <title>Gynäkologische Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3169 'Gynäkologische Anamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3171"/>
+                    <code code="11350-6" codeSystem="2.16.840.1.113883.6.1" displayName="History of Sexual behavior Narrative"/>
+                    <title>Sexualanamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3171 'Sexualanamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3181"/>
+                    <code code="X-OHPYS" codeSystem="2.16.840.1.113883.6.1" displayName="Other physical history"/>
+                    <title>Sonstige organmedizinische Anamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3181 'Sonstige organmedizinische Anamnese' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3173"/>
+                    <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" displayName="History of Medication use Narrative"/>
+                    <title>Medikamentenanamnese</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3173 'Medikamentenanamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3029"/>
+                    <code code="42346-7" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Medikation bei Aufnahme</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3029 'Medikation bei Einweisung (Historie)' (2017-02-01T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3182"/>
+                    <code code="29544-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physical findings"/>
+                    <title>Körperlicher Befund bei Aufnahme</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3182 'Körperlicher Befund bei Aufnahme' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3127"/>
+                    <code code="11488-4" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Konsiliarbefunde</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3127 'Konsiliarbefunde' (2018-08-13T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <templateId root="1.2.276.0.76.10.3100"/>
+                    <id root="1.2.3.999" extension="--example only--"/>
+                    <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" displayName="Relevant diagnostic tests/laboratory data Narrative"/>
+                    <title>Befunde/Ergebnisse</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3100 'Befunde/Ergebnisse' (2017-04-30T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3183"/>
+                    <code code="26436-6" codeSystem="2.16.840.1.113883.6.1" displayName="Laboratory studies"/>
+                    <title>Laborbefunde</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3183 'Laborbefunde' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3174"/>
+                    <code code="84192-4" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Admission evaluation note"/>
+                    <title>Psychischer Befund bei Aufnahme</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3174 'Psychischer Befund bei Aufnahme' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3144"/>
+                    <code code="75441-6" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Diagnostic study"/>
+                    <title>Testpsychologische Diagnostik</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3144 'Testpsychologische Diagnostik' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3032"/>
+                    <code code="29554-3" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Prozeduren und Maßnahmen</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3032 'Prozeduren und Maßnahmen' (2017-02-01T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3184"/>
+                    <code code="X-BPSYCSASMT" codeSystem="2.16.840.1.113883.6.1" displayName="Bio psycho social context assessemnt"/>
+                    <title>Einordnung des Krankheitsbildes in den bio-psycho-sozialen Kontext</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3184 'Einordnung des Krankheitsbildes in den bio-psycho-sozialen Kontext' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3185"/>
+                    <code code="34904-3" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Progress note"/>
+                    <title>Behandlungsverlauf</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3185 'Behandlungsverlauf' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3033"/>
+                    <code code="18776-5" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Weitere empfohlene Maßnahmen</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3033 'Weitere empfohlene Maßnahmen' (2013-12-30T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3145"/>
+                    <code code="52234-2" codeSystem="2.16.840.1.113883.6.1" displayName="Medical social services treatment plan, Assessment information"/>
+                    <title>Sozialmedizinische Einschätzung</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3145 'Sozialmedizinische Einschätzung' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3021"/>
+                    <code code="8648-8" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Epikrise</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3021 'Zusammenfassung des Aufenthalts' (2013-09-16T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3031"/>
+                    <code code="10183-2" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Medikation bei Entlassung</title>
+                    <text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3031 'Medikation bei Entlassung' (2017-02-01T00:00:00) -->
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

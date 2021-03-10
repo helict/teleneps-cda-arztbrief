@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             id="2.16.840.1.113883.4.642.3.273"
+             canonicalUri="http://hl7.org/fhir/ValueSet/goal-priority"
+             name="GoalPriority"
+             displayName="Goal Priority"
+             effectiveDate="2018-03-01T00:00:00"
+             statusCode="draft"
+             url="http://art-decor.org/decor/services/"
+             ident="hl7de-"
+             referencedFrom="teleneps-">
+      <desc language="en-US">
+                <div>Indicates the level of importance associated with reaching or sustaining a goal.</div>
+            </desc>
+      <sourceCodeSystem id="2.16.840.1.113883.4.642.1.274"
+                        identifierName=""
+                        canonicalUri="urn:oid:2.16.840.1.113883.4.642.1.274"
+                        canonicalUriDSTU2="urn:oid:2.16.840.1.113883.4.642.1.274"
+                        canonicalUriSTU3="urn:oid:2.16.840.1.113883.4.642.1.274"
+                        canonicalUriR4="urn:oid:2.16.840.1.113883.4.642.1.274"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="high-priority"
+                  codeSystem="2.16.840.1.113883.4.642.1.274"
+                  displayName="High Priority"
+                  level="0"
+                  type="L">
+                    <desc language="en-US">Indicates that the goal is of considerable importance and should be a primary focus of care delivery.</desc>
+                </concept>
+                <concept code="medium-priority"
+                  codeSystem="2.16.840.1.113883.4.642.1.274"
+                  displayName="Medium Priority"
+                  level="0"
+                  type="L">
+                    <desc language="en-US">Indicates that the goal has a reasonable degree of importance and that concrete action should be taken towards the goal. Attainment is not as critical as high-priority goals.<br clear="none"/>
+                    </desc>
+                </concept>
+                <concept code="low-priority"
+                  codeSystem="2.16.840.1.113883.4.642.1.274"
+                  displayName="Low Priority"
+                  level="0"
+                  type="L">
+                    <desc language="en-US">The goal is desirable but is not sufficiently important to devote significant resources to. Achievement of the goal may be sought when incidental to achieving other goals.<br clear="none"/>
+                    </desc>
+                </concept>
+            </conceptList>
+   </valueSet>
+</valueSets>

@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/cda.xsl"?>
+<?xml-model href="../schematron/teleneps-cdapab.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pharm="urn:ihe:pharm:medication" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+    <realmCode code="DE"/>
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="1.2.276.0.76.10.1033"/>
+    <id root="1.2.3.999" extension="--example only--"/>
+    <code code="75443-2" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Discharge summary"/>
+    <title>Stationärer Entlassbrief, Klinik und Poliklinik für Psychotherapie und Psychosomatik, Universitätsklinikum Gustav Fritz Wendinger</title>
+    <effectiveTime value="20201221103700"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="normal"/>
+    <languageCode code="de-DE"/>
+    <setId root="1.2.3.999" extension="--example only--"/>
+    <versionNumber value="1"/>
+    <!-- Patient -->
+    <recordTarget typeCode="RCT" contextControlCode="OP" >
+        <patientRole classCode="PAT" >
+            <id root="1.2.276.0.76.4.8" extension="M123456787" />
+            <addr>
+                <streetAddressLine>Musterstr. 3</streetAddressLine>
+                <postalCode>01234</postalCode>
+                <city>Musterstadt</city>
+            </addr>
+            <patient>
+                <name>
+                    <given>Monika</given>
+                    <family>Mustermann</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19660610" />
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <!-- Autor -->
+    <author typeCode="AUT" contextControlCode="OP">
+        <time value="20201221"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <id root="1.2.3.999" extension="--example only--"/>
+            <telecom value="tel:+1-12345678"/>
+            <assignedPerson>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Samanta</given>
+                    <family>Mentaler</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.276.0.76.4.17" extension="522222200" />
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <!-- Verantwortliche Organisation für das erstellte Dokument -->
+    <custodian typeCode="CST">
+        <assignedCustodian>
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <!-- Informations-Empfänger -->
+    <informationRecipient typeCode="PRCP">
+        <intendedRecipient>
+            <id root="1.2.3.999" extension="--example only--"/>
+            <informationRecipient>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Mustafa</given>
+                    <family>Muster</family>
+                </name>
+            </informationRecipient>
+            <receivedOrganization>
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Psychotraumatologie-Praxis Dr. Muster Muster</name>
+                <addr>
+                    <streetAddressLine>Musterstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    <!-- Vor dem Gesetz verantwortliche Unterzeichner des Dokumentes -->
+    <legalAuthenticator typeCode="LA" contextControlCode="OP">
+        <time value="20201221103700"/>
+        <signatureCode code="I"/>
+        <assignedEntity>
+            <id root="1.2.3.999" extension="--example only--"/>
+            <telecom value="tel:+1-12345678"/>
+            <assignedPerson>
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given>Samanta</given>
+                    <family>Mentaler</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.3.999" extension="--example only--"/>
+                <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                <telecom value="tel:+1-12345678"/>
+                <addr>
+                    <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                    <postalCode>01234</postalCode>
+                    <city>Musterstadt</city>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <!-- include template 1.2.276.0.76.10.2027 'CDA encompassingEncounter Patientenkontakt' (2014-08-25T00:00:00) 0..1 O -->
+    <componentOf typeCode="COMP">
+        <encompassingEncounter classCode="ENC" moodCode="EVN">
+            <id root="1.2.3.999" extension="--example only--"/>
+            <code code="NONAC" codeSystem="2.16.840.1.113883.5.4" displayName="inpatient non-acute"/>
+            <effectiveTime>
+                <low value="20201201140000"/>
+                <high value="20201221103700"/>
+            </effectiveTime>
+            <responsibleParty>
+                <assignedEntity>
+                    <!-- include template 1.2.276.0.76.10.90012 'CDA Assigned Entity Elements' (2011-12-19T00:00:00)   -->
+                    <id root="1.2.3.999" extension="--example only--"/>
+                    <telecom value="tel:+1-12345678"/>
+                    <assignedPerson>
+                        <name>
+                            <prefix qualifier="AC">Dr.</prefix>
+                            <given>Samanta</given>
+                            <family>Mentaler</family>
+                        </name>
+                    </assignedPerson>
+                </assignedEntity>
+            </responsibleParty>
+            <!-- include template 1.2.276.0.76.10.90021 'Encounter Location' (2014-08-25T00:00:00) 0..1 R -->
+            <location typeCode="LOC">
+                <healthCareFacility classCode="SDLOC">
+                    <serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                        <id root="1.2.3.999" extension="--example only--"/>
+                        <name>Universitätsklinikum Gustav Fritz Wendinger</name>
+                        <telecom value="tel:+1-12345678"/>
+                        <addr>
+                            <streetAddressLine>Beispielstr. 22</streetAddressLine>
+                            <postalCode>01234</postalCode>
+                            <city>Musterstadt</city>
+                        </addr>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+        </encompassingEncounter>
+    </componentOf>
+    <component typeCode="COMP" contextConductionInd="true">
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3001"/>
+                    <code code="X-SALUT" codeSystem="2.16.840.1.113883.6.1"/>
+                    <text>
+                        <paragraph>Sehr geehrte Kollegin, sehr geehrter Kollege,</paragraph>
+                        <paragraph>wir berichten über die Patientin Monika Mustermann, geboren am 10.06.1966, wohnhaft Musterstraße 3 in 01234 Musterstadt, die sich in der Zeit vom xx.xx.2018 bis xx.xx.2018 in unserer stationären Behandlung befand.</paragraph>                        
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3001 'Anrede' (2013-01-10T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3027"/>
+                    <code code="11535-2" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Entlassungsdiagnosen</title>
+                    <text>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Diagnose</th>
+                                    <th>ICD Code</th>
+                                    <th>Lokalisation</th>
+                                    <th>Zusatz</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content ID="diag-1">Posttraumatische Belastungsstörung</content>
+                                    </td>
+                                    <td>F43.1</td>
+                                    <td>--</td>
+                                    <td>G</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content ID="diag-2">Dissoziative Amnesie</content>
+                                    </td>
+                                    <td>F44.0</td>
+                                    <td>--</td>
+                                    <td>G</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content ID="diag-3">Dissoziative Bewegungsstörung</content>
+                                    </td>
+                                    <td>F44.4</td>
+                                    <td>--</td>
+                                    <td>G</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><content styleCode="Bold">Nebendiagnosen</content></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content ID="diag-4">Vitamin B12-Mangel</content>
+                                    </td>
+                                    <td>E53.8</td>
+                                    <td>--</td>
+                                    <td>G</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.276.0.76.10.4079"/>
+                            <id root="1.2.3.999" extension="--example only--"/>
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20201201"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Diagnose Observation-->
+                                    <templateId root="1.2.276.0.76.10.4080"/>
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <code code="8651-2" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital discharge Dx"/>
+                                    <text>
+                                        <reference value="#diag-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20201201"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="F43.1" codeSystem="1.2.276.0.76.5.413" displayName="Posttraumatische Belastungsstörung"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.276.0.76.10.4079"/>
+                            <id root="1.2.3.999" extension="--example only--"/>
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20201201"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Diagnose Observation-->
+                                    <templateId root="1.2.276.0.76.10.4080"/>
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <code code="8651-2" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital discharge Dx"/>
+                                    <text>
+                                        <reference value="#diag-2"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20201201"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="F44.0" codeSystem="1.2.276.0.76.5.413" displayName="Dissoziative Amnesie"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.276.0.76.10.4079"/>
+                            <id root="1.2.3.999" extension="--example only--"/>
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20201201"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Diagnose Observation-->
+                                    <templateId root="1.2.276.0.76.10.4080"/>
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <code code="8651-2" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital discharge Dx"/>
+                                    <text>
+                                        <reference value="#diag-3"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20201201"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="F44.4" codeSystem="1.2.276.0.76.5.413" displayName="Dissoziative Bewegungsstörung"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.2.276.0.76.10.4079"/>
+                            <id root="1.2.3.999" extension="--example only--"/>
+                            <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20201201"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Diagnose Observation-->
+                                    <templateId root="1.2.276.0.76.10.4080"/>
+                                    <id root="1.2.3.999" extension="--example only--"/>
+                                    <code code="81885-6" codeSystem="2.16.840.1.113883.6.1" displayName="Secondary Diagnosis"/>
+                                    <text>
+                                        <reference value="#diag-4"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20201201"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="E53.8" codeSystem="1.2.276.0.76.5.413" displayName="Vitamin B12-Mangel"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+                <!-- template 1.2.276.0.76.10.3027 'Entlassungsdiagnose' (2017-02-01T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT">
+                    <templateId root="1.2.276.0.76.10.3139"/>
+                    <code code="46239-0" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Beschwerden bei Vorstellung</title>
+                    <text>Frau M. (52, Bürokauffrau) berichtete bereits zu Beginn des Gesprächs, dass sie "multipel" sei und "sehr viele verschiedene" Persönlichkeitsanteile habe und sie diese "heraus lasse, wenn diese es wollen" würden. Seit Sommer 2012 seien ihr traumatische Erinnerungen aus ihrer Kindheit erstmalig bewusst geworden. Zu dieser Zeit habe sich eine Mobbingsituation am Arbeitsplatz so zugespitzt, dass sie ein Gespräch mit ihren Vorgesetzten und dem Betriebsrat gesucht habe. Man habe ihr jedoch nicht geholfen, sondern ihre Arbeitsweise kritisiert und ihr ein Coaching empfohlen. Bei diesem Coaching habe sich herausgestellt, dass sie depressiv gewesen sei und Frau M. habe daraufhin eine Psychotherapie begonnen, bei der erste Erinnerungen aufgekommen seien. Zu ersten traumaassoziierten Intrusionen sein es dann während des Intimkontaktes mit ihrem Partner gekommen. Bis dahin habe Frau M. keine Erinnerung an ihre Kindheit gehabt, mittlerweile würden immer mehr negative Erinnerungen aufkommen. Sie habe in ihrer Kindheit 3 Suizidversuche unternommen. Ausgelöst durch äußere Reize käme es vermehrt zu Wiedererleben in Form von aufdrängenden Bildern. Teilweise verliere sie dabei das Gefühl für Raum und Zeit und wisse nicht mehr, dass sie sich im Hier und Jetzt befinde. Frau M. leide unter Alpträumen und habe Durchschlafstörungen, welche sich durch die Medikation mit Quetiapin etwas gebessert hätten. Seit 2014 leide Frau D. auch unter Sprachschwierigkeiten, wenn sie sich traumaassoziiert getriggert fühle. Sie beginne dann zu Stottern, an manchen Tagen könne sie überhaupt nicht mehr sprechen. Zudem komme es zum Teil zu Konversionsstörungen der Beine, die dann "nicht mehr laufen wollen" würden. Frau M. erlebe regelmäßig Erinnerungslücken in Alltagssituationen und sie wisse manchmal nicht, wie sie zu bestimmten Orten gelangt sei, auch wenn die Ziele stets die gewesen seien, die sie habe erreichen wollen. Sie habe große Angst, sich alleine außerhalb ihrer Wohnung zu bewegen und erledige Alltagsangelegenheiten nur in Begleitung ihrer jüngeren Tochter, die sie sehr unterstütze. Lediglich zur Arbeit fahre sie allein mit dem Auto. Sie habe Angst vor verschiedensten Orten und Dingen. Frau M. leide zusätzlich an Epilepsie und bei vermehrter psychischer Belastung unter Magen-Darm-Problemen mit Übelkeit und Erbrechen. Es falle ihr sehr schwer, ausreichend zu essen, da sie Nahrungsaufnahme mit traumatischen Erinnerungen assoziiere. Bei der Arbeit könne sie sich gut konzentrieren, zu Hause falle ihr dies schwerer, da sie da ihre Ängste bewusster wahrnehme. Frau M. gab an, sehr schreckhaft zu sein, so schrecke sie bei Gewittern oder lauten Geräuschen schnell zusammen. 
+                        <paragraph>Ihre aktuelle Stimmung beschrieb Frau M. als "gemischt". Auf Arbeit sei ihre Stimmung gut, zu Hause habe sie viel Angst, wenn Traumaerinnerungen hoch kommen würden. Es gebe keine suizidalen Gedanken oder Handlungsimpulse.</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3139 'Beschwerden bei Vorstellung' (2019-06-02T14:26:43) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3141"/>
+                    <code code="78306-8" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health History and physical"/>
+                    <title>Psychosoziale Anamnese</title>
+                    <text>Bis 2012 habe Frau M. keine Erinnerung an ihre Kindheit gehabt. Inzwischen gebe es bruchstückhafte Erinnerungen, die jedoch durchgehend negativ seien. Sie beschrieb ihre Kindheit als "100 Prozent negativ und noch mehr". Ihre Mutter, geb. 1945, sei Lehrerin gewesen. Sie habe Frau D. körperliche Gewalt angetan und die Patientin wie eine "Sklavin im Haushalt" behandelt. Heute bestehe kein Kontakt mehr. Ihr Vater, geb. 1931, sei Alkoholiker gewesen und habe 1985 unter Alkoholeinfluss einen tödlichen Unfall gehabt. Er habe auf dem Bau gearbeitet. Frau M. sei gemeinsam mit zwei Schwestern aufgewachsen. Ihre jüngere Schwester (-2J.), zu der Frau M. ein gutes Verhältnis gehabt habe, sei 2004 bei einem Verkehrsunfall ums Leben gekommen. Zur älteren Schwester (+3J.) habe Frau M. keinen Kontakt mehr. Das Verhältnis sei bereits in der Kindheit schwierig gewesen, da diese Schwester das Lieblingskind der Mutter gewesen sei. 
+                        <paragraph>Frau M. habe 1982 die 10. Klasse abgeschlossen und anschließend eine Ausbildung zur Verkäuferin absolviert. In diesem Beruf habe sie bis 1990 gearbeitet. Seit 1990 arbeite sie in verschiedenen Abteilungen für einen Bauträger, zunächst ungelernt im Büro, von 1995-1997 habe sie noch eine Ausbildung zur Bürokauffrau gemacht. </paragraph>
+                        <paragraph>Frau M. sei von 1985-2003 verheiratet gewesen. An ihre Ehe habe sie keine genauen Erinnerungen, sie sei aber "nicht gut" gewesen. Aus der Ehe habe Frau M. zwei Töchter. Zur Älteren (geb. 1987, gelernte Bäckerin, aktuell arbeitslos) habe sie keine gute. Sie glaube ihr nicht, dass sie traumatisiert sei und es gebe nur selten Kontakt. Zur jüngeren Tochter (geb. 1991, selbstständige Malerin und Lackiererin) habe sie guten und engen Kontakt, allerdings helfe sie ihr "zu viel" und gebe sich "zu viel Mühe" um sie. Sie wünsche sich, dass sie mehr sein eigenes Leben leben würde.</paragraph>
+                        <paragraph>Frau M. habe einen Partner (+7J, Lagerarbeiter, seit langem krankgeschrieben), mit dem sie seit ca. 2004 zusammen sei. Beide hätten eine eigene Wohnung, wären zwischenzeitlich auch immer mal getrennt gewesen. </paragraph>
+                        <paragraph>Frau M. lebe in einer Mietwohnung. Sie arbeite vollschichtig, es gebe keine finanziellen Schwierigkeiten. Sie habe wenige Freunde aufgrund ihrer Ängste vor dem Rausgehen und ihrer Sprachschwierigkeiten.</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3141 'Psychosoziale Anamnese' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3140"/>
+                    <code code="45420-7" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health history"/>
+                    <title>Traumaanamnese/Anamnese kritischer Lebensereignisse</title>
+                    <text>
+                        <list>
+                            <item>Kindheit und Jugend bis zum Alter von 15 (1981) massiver sexueller Missbrauch sowie körperliche und psychische Gewalt im familiären Umfeld</item>
+                            <item>ca. 2012-2015 Mobbing und verbale sexuelle Belästigung am Arbeitsplatz</item>
+                        </list>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3140 'Traumaanamnese/ Anamnese kritischer Lebensereignisse' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3180"/>
+                    <code code="11339-9" codeSystem="2.16.840.1.113883.6.1" displayName="History of Major illnesses and injuries"/>
+                    <title>Eigenanamnese</title>
+                    <text>
+                        <list>
+                            <caption>Vorerkrankungen</caption>
+                            <item>fokale Epilepsie (ED 2012)- wie abwesend gewesen, wie "kurz wegtreten wollen", Schwindel</item>
+                            <item>Asthma bronchiale</item>
+                            <item>Vit B12 Mangel</item>
+                            <item>Weitsichtigkeit bds. 1,5-2</item>
+                            <item>Kinderkrankheiten: Windpocken, Verletzung durch leibl. Vater 8.Lj. abdominal, untergewichtig als Kind durch Mangelernährung</item>
+                        </list>
+                        <paragraph>Impfstatus: vollständig</paragraph>
+                        <paragraph>Zahnarztbesuch: 2018, regelmäßig</paragraph>
+                        <paragraph>Gastroskopien: 2016 (Helicobacter- AB)</paragraph>
+                        <paragraph>Coloskopien: 2016 o.B.</paragraph>
+                        <list>
+                            <caption>Operationen</caption>
+                            <item>1994 CCE, 1998 Tubensterilisation, 2002 Knie-OP (Arthoskopie) re, 2009 Schnappender Daumen li.- OP, 2010 Nasenscheidewand-OP</item>
+                        </list>
+                        <list>
+                            <caption>Stat. Aufenthalte</caption>
+                            <item>2016 Ort X Reha</item>
+                            <item>2015 Ort Y</item>
+                            <item>2017 stat. Psychiatrie zur med. Einstellung bei Schlafstörungen</item>
+                        </list>
+                        <paragraph>Allergien: Pollinose, Amoxicillin, Pantoprazol, Clarithromycin</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3180 'Eigenanamnese' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3024"/>
+                    <code code="10157-6" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Familienanamnese</title>
+                    <text>
+                        <list>
+                            <item>Mutter: kein Kontakt seit 3 Jahren</item>
+                            <item>Vater: Rheuma, Alkoholabhängigkeit, Nikotinabhängigkeit, bereits verstorben 1988</item>
+                            <item>Geschwister: 2 Geschwister (jüngere Schwester- 2002 durch Autounfall verstorben, ältere Schwester- kein Kontakt)</item>
+                            <item>Großeltern: Opa mts. grüner Star</item>
+                            <item>Leibl. Kinder: 2 Töchter, gesund</item>
+                        </list>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3024 'Familienanamnese' (2013-12-30T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3143"/>
+                    <code code="10189-9" codeSystem="2.16.840.1.113883.6.1" displayName="Review of systems overview - Reported"/>
+                    <title>Vegetative Anamnese</title>
+                    <text>Schlaf:  Traumaerinnerungen. Albträume. Appetit: wechselhaft. Speisenunverträglichkeiten: könne nichts warmes kochen (Traumerinnerung), Kohl, keine Gewürze außer Salz und Pfeffer, vertrage viel Gemüsen und Obst nicht. Trinkmenge: 1,5 l/d. Stuhlgang: wechselhaft. Miktion: häufig. Nykturie: 1x. Ödeme: nein. Dyspnoe:  nein. Husten: nein. Schwitzen: nein. Nikotin: nein. Alkohol: selten. Drogen: nein. Koffein: 1Ta/d. </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3143 'Vegetative Anamnese' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3169"/>
+                    <code code="89221-6" codeSystem="2.16.840.1.113883.6.1" displayName="Gynecology History and physical note"/>
+                    <title>Gynäkologische Anamnese</title>
+                    <text>LU 11/2017, LR vor 5 Jahren wegen Hormonspirale bei Hypermenorrhoe, 1998 Tubensterilisation, 1991 Tochter, 1987 Tochter Zangengeburt
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3169 'Gynäkologische Anamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3173"/>
+                    <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" displayName="History of Medication use Narrative"/>
+                    <title>Medikamentenanamnese</title>
+                    <text>
+                        <list>
+                            <item>Quetiapin 50mg z.N.</item>
+                            <item>Escitalopram 10mg 1/2-0-0.</item>
+                            <item>Topiramat 50mg 1-0-1.</item>
+                            <item>Beclometason 0,1mg 2x1 Hub.</item>
+                            <item>Pollenhyposensibilisierung alle 4-6 Wochen.</item>
+                            <item>Vit B12 alle 4 Wochen.</item>
+                            <item>Baclofen 10mg b. Bed..</item>
+                            <item>Salbutamol 0,1mg Spray b. Bed..</item>
+                            <item>Ibuprofen 400mg.</item>
+                        </list>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3173 'Medikamentenanamnese' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3182"/>
+                    <code code="29544-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physical findings"/>
+                    <title>Körperlicher Befund bei Aufnahme</title>
+                    <text>52-jährige Frau, guter Allgemein- und Ernährungszustand, Größe 154 cm, Gewicht: 52 kg, BMI: 21, Haut und Schleimhäute: reizlose Narbe bei Z.n. CCE, Koordination: Blindgang: unsicher, Seiltänzergang: unsicher, sonstiger klinischer und neurologischer Status unauffällig.
+                        <paragraph>D: anamnestisch rezid. wechselnd rechts- oder linksbetonte Paraspastik, bildmorph. und in MEP und SSEPs sowie Liquorpunktion unauffällig, a.e. dissoziativ, fokale Epilepsie mit dyskognitiven Anfällen, Migräne, Asthma bronchiale, Vit B12 Mangel, Nahrungsmittelunverträglichkeiten von Pat. beschrieben, die jedoch fluktuierend zu sein scheinen</paragraph>
+                   </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3182 'Körperlicher Befund bei Aufnahme' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3127"/>
+                    <code code="11488-4" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Konsiliarbefunde</title>
+                    <text>Konsil Augenheilkunde vom 12.09.2018
+                        <paragraph>Anamnese: seit circa 5 Monaten subj. langsam progrediente Sehverschlechterung R/L, oft "reibendes Auge" R/L
+                        </paragraph><paragraph>Fernvisus RA:  csc = 0,6p (neue Gläser bessern nicht)	RSS: 0,80
+                        </paragraph><paragraph>Fernvisus LA:  sc = 0,4 (Gläser bessern nicht)		RSS: 0,80
+                        </paragraph><paragraph>Tensio RA: 11 mmHg
+                        </paragraph><paragraph>Tensio LA: 9 mmHg
+                        </paragraph><paragraph>VA RA: Lider: reizfrei; Konj: LIPCOF St. I-II, sonst reizfrei;  HH: etwas gestippt, sonst glatt/klar/spiegelnd; Iris: reizfrei; VK: mitteltief,optisch leer; Pupille: rund, spielt  Lens: dezente vordere und hintere Rindentrübung - Kernsklerose
+                        </paragraph><paragraph>VA LA: Lider: reizfrei; Konj: LIPCOF St. I-II, sonst reizfrei;  HH: etwas gestippt, sonst glatt/klar/spiegelnd; Iris: reizfrei; VK: mitteltief,optisch leer; Pupille: rund, spielt  Lens: dezente vordere und hintere Rindentrübung - Kernsklerose
+                        </paragraph><paragraph>Fundus RA: Papille: randscharf - vital - im Niveau - CDR 0.2 - ISNT-Regel erfüllt; Makula: intakt; Gefäße: altersentsprechend; Peripherie: unauffällig - NH ad, GK-Trübungen
+                        </paragraph><paragraph>Fundus LA: Papille: randscharf - vital - im Niveau - CDR 0.2 - ISNT-Regel erfüllt; Makula: intakt; Gefäße: altersentsprechend; Peripherie: unauffällig - NH ad, GK-Trübungen
+                        </paragraph><paragraph>Bulbusmotilität: R/L: grob orientierend intakt, keine Schielstellung, kein Bulbusbewegungsschmerz, keine Doppelbilder
+                        </paragraph><paragraph>Lichtreaktion: R/L: direkt und indirekt vorhanden, prompt, grob orientierend seitengleich, kein RAPD
+                        </paragraph><paragraph>Hertel-Ophthalmometrie: RA: 13mm, LA: 13 mm, Basis: 98mm
+                        </paragraph><paragraph>OCT R/L: keine intra-/subretinale Flüssigkeit oder sonst. wegweisender Befund 
+                        </paragraph><paragraph>statische Perimetrie 30-02-Schwellentest weiß/weiß: soweit bei reduzierter Compliance verwertbarn keine wegweisenden pathologischen Defekte  
+                        </paragraph><paragraph>Diagnose: R/L: Sicca-Symptomatik, Cat. corticonuclearis incipiens, Hyperopie
+                        </paragraph><paragraph>Empfehlung:
+                        </paragraph><paragraph>Kein Hinweis auf akut interventionsbedürftige okuläre Erkrankung, R/L:	Tränenersatzmittel 3-5xtgl. und bei Bedarf, ggf. Bildgebung Schädel/Orbita zum sicheren Ausschluss zusätzlicher Optikusaffektion im Nachgang des stationären Aufenthaltes empfehlenswert
+                        </paragraph><paragraph>Ruhe-EKG vom 17.08.2018:
+                        </paragraph><paragraph>ST, nf SR (78/min), PQ: 120ms, QRS: 80ms, QT/QTc (nach Bazett): 360ms/410ms, keine Blockbilder, regelhafter R-Progress (R/S-Umschlag V2/V3), keine Hypertrophiezeichen, keine signifikanten ERBS
+                        </paragraph><paragraph>ZSFG: QTC aktuell normwertig
+                        </paragraph><paragraph>Verlauf: 
+                        </paragraph><paragraph>Bei schmerzbedingten Bewegungseinschränkungen (Schulter-Nackenbereich) und Mobilitätseinschränkungen erfolgte eine kurzzeitige krankengymnastische Mitbehandlung. Insgesamt kam es zu einer deutlichen Verbesserung hinsichtlich der intermittierend auftretenden Bewegungsstörungen während des gesamten Therapieverlaufs. Aufgrund von Verlängerungen der QTc-Zeit erfolgte eine Umstellung der antidepressiven Medikation von Escitalopram auf Valdoxan, was von der Patientin gut vertragen wurde. Wir empfehlen eine Einnahme für maximal ein Jahr und in der Folge einen Absetzversuch. Bei subjektiv progredienter Sehrverschlechterung erfolgte eine augenärztliche Diagnostik (s. anbei). Wir bitten um eine Kontrolle von EKG und Labor im Verlauf.</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3127 'Konsiliarbefunde' (2018-08-13T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3174"/>
+                    <code code="84192-4" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Admission evaluation note"/>
+                    <title>Psychischer Befund bei Aufnahme</title>
+                    <text>Gepflegte 52-jährige Patientin, die ausführlich und offen über ihre Beschwerden berichtet und dabei viel lächelt. Im Kontakt wirkt sie freundlich und motiviert. Bewusstsein klar, zu allen Qualitäten altersentsprechend orientiert, Interaktion: offensive Darstellung der Beschwerden, unauffällige Psychomotorik, keine inhaltlichen Denkstörungen, Formale Denkstörungen: umständlich, Gedankendrängen, Vorbeireden. Derealisations- und Depersonalisationserleben geschildert; Angabe vom Vorliegen verschiedener Persönlichkeitsanteile, im Gespräch kein Wechsel zu beobachten. Traumaassoziierte Intrusionen. Keine Halluzinationen, keine Zwänge, ausgeprägte agoraphobische Ängste. Die Patientin wirkt allgemein ängstlich und innerlich unruhig, dabei lösungsorientiert und positiv gestimmt. Affekt stabil und schwingungsfähig, Stottern beim Sprechen über die Kindheit. Durchschlafschwierigkeiten, keine akute Eigen- oder Fremdgefährdung, 3 Suizidversuche in der Kindheit, keine im Erwachsenenalter. Alkohol: aller 3-4 Monate 1 Gl., kein Nikotin, keine Drogen.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3174 'Psychischer Befund bei Aufnahme' (2020-10-05T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3185"/>
+                    <code code="34904-3" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health Progress note"/>
+                    <title>Behandlungsverlauf</title>
+                    <text>Wir behandelten Frau M. im Rahmen einer zehnwöchigen stationären Traumabehandlung mit verhaltenstherapeutisch fundierter Gruppen- und Einzelpsychotherapie. Außerdem nahm sie an der Kunst- und Körpertherapie in der Gruppe und im Einzelsetting, dem Sozialen Kompetenztraining und dem Walking teil.
+                        <paragraph>Zu Beginn der Behandlung lag der Fokus auf dem Aufbau einer tragfähigen Arbeitsbeziehung zwischen Patientin und Therapeutin. Trotz der stark ausgeprägten Symptomatik, welche mit viel Misstrauen einherging, gelang es Frau M. gut, Vertrauen zu fassen und sich auf die Therapie einzulassen. 
+                        </paragraph>Als wichtigstes Behandlungsziel gab Frau M. an, weniger Angst haben zu wollen. Dies beziehe sich auf verschiedene Personen und Bereiche, insbesondere auf Männer und diverse Orte. Sie wolle sich wieder freier bewegen, raus gehen und ihre Erledigungen allein bewältigen können. Dafür wolle sie die Sprach- und Bewegungsstörungen sowie die Dissoziationen loswerden. Weiterhin gab sie an, dass sie die "Ängste der Persönlichkeitsanteile verringern und die Anteile besser kontrollieren" wolle.
+                        <paragraph>Zur Klärung der Symptomatik der Patientin erfolgte eine umfangreiche halbstrukturierte interviewbasierte Diagnostik. Im Rahmen des Strukturierten Klinischen Interviews SKID I ergaben sich die Diagnosen einer Posttraumatischen Belastungsstörung (F43.1) bezüglich des schweren sexuellen  und körperlichen Missbrauchs während der Kindheit und Jugend der Patientin sowie eine rezidivierende depressive Störung, ggw. leichte Episode (F33.0), welche im klinischen Eindruck objektiviert werden konnten. Es ergaben sich ferner Hinweise auf Zwangshandlungen im Sinne von Ordnung und Sauberkeit, die jedoch im Rahmen der PTBS eingeordnet und von einer Zwangsstörung abgegrenzt werden konnten. 
+                        </paragraph><paragraph>Im SKID-II erreichte Frau M. beim Screening-Fragebogen für folgende Sektionen den Cut-off: F60.0 Paranoide Persönlichkeitsstörung, F60.1 Schizoide Persönlichkeitsstörung und F60.6 Ängstliche (vermeidende) Persönlichkeitsstörung. Keine der Diagnosen konnte im Gespräch bestätigt werden. 
+                        </paragraph><paragraph>Darüber hinaus führten wir ein Strukturiertes Klinisches Interview für DSM-IV für dissoziative Störungen (SKID-D; Gast et al., 2000) durch. Hinsichtlich der erfragten Bereiche Depersonalisation, Derealisation, Identitätsunsicherheit und Identitätsstörung zeigten sich keine pathologischen Auffälligkeiten. Hinsichtlich von amnestischen Episoden berichtete Frau M. seit frühester Kindheit amnestische Lücken über Jahre. Daher vergaben wir die Diagnose einer dissoziativen Amnesie(F44.0). Hinweise für eine dissoziative Identitätsstörungn konnten nicht eruiert werden. Dies entspricht auch dem klinischen Eindruck.
+                        </paragraph><paragraph>Auf der  Clinician-Administered PTSD Scale for DSM-5 (CAPS) erfüllte Frau M. die Kriterien der PTBS auf den Skalen Wiedererleben, Vermeidung, Negative Veränderungen von Kognition und Stimmung sowie Erhöhtes Arousal. Insgesamt spricht das Ergebnis der CAPS für das Vorliegen einer PTBS. Allerdings sind Faktoren vorhanden, die ungünstige Auswirkungen auf die Validität haben (bzgl. Verständnis der Items, evtl. Aggravation).
+                        </paragraph><paragraph>Es folgte ein umfassendes Aufklärungsgespräch bezüglich der Diagnostik. Insbesondere die Mitteilung darüber, dass es sich bei den vorliegenden Beschwerden nicht um eine Dissoziative Identitätsstörung handelt, wie Frau M. angenommen hatte, sorgte seitens der Patientin für große Entlastung. Die Diagnosen der PTBS sowie der Dissoziativen Amnesie und Bewegungsstörung konnte die Patientin gut annehmen. 
+                        </paragraph><paragraph>Zur Herausarbeitung des Zusammenhangs zwischen sozialbiografischen Aspekten und aktueller Symptomatik erarbeitete die Patientin eine Lebenslandkarte. Im ersten Versuch fiel es ihr sehr schwer, differenzierte Angaben zu machen. Sie gab an, keine Erinnerungen zu ihrem Leben zu haben, lediglich würden ihr öfter Bilder und Szenen im Rahmen dissoziativer Episoden einschießen. Es gelang ihr nicht, Ereignisse autobiografisch einzuordnen oder die Belastung zu gewichten. Ihre Kindheit und Jugend bilanzierte sie zunächst mit "100% schlecht". Angaben zu positiven oder stärkenden Aspekten der Lebensgeschichte waren ihr nicht möglich. Aufkommenden Intrusionen fühlte sie sich ausgeliefert, da sie völlig unerwartet kämen und sie nicht wisse, ob das alles wirklich passiert sei. Sie schilderte die Inhalte unstrukturiert und ausschweifend und führte zudem Tagebuch zu den Erinnerungen.
+                        </paragraph><paragraph>In den Einzeltherapien wurden schwerpunktmäßig Stabilisierungsmaßnahmen bei intrusivem Erleben oder aufkommenden Dissoziationen thematisiert. Hierfür wurde mit der Patientin z.B. die "Tresorübung" gemacht, auf die sie sich gut einlassen konnte. Sie erarbeite sich über die Sitzung hinaus einen sicheren Ort ("Loch in der Erde, das sie zuschütten kann"), in das sie belastende Bilder und Szenen vergraben kann. Nach eigenen Angaben wendete sie die Technik im Verlauf an, wobei ihr die innere Abgrenzung von den Erinnerungen weiter schwer fiel. Weitere Techniken zur Stabilisierung und Bewältigung aufkommenden dissoziativen Erlebens erlangte Frau M. im Rahmen des Skillstrainings. Hierbei stellte sie fest, dass sie von der Anwendung von haptischen (z.B. Igelball, Knete) als auch olfaktorischen (z.B. Ammoniak) Skills profitiere. 
+                        </paragraph><paragraph>Die weiteren Einzelsitzungen nutzte Frau M. zur Reflexion und intensiven Auseinandersetzung mit der zunehmenden Fülle an Erinnerungen zu ihrer Kindheit. Hierbei war das vorrangige Ziel, die Ereignisse zu strukturieren. Von einer vertieften Bearbeitung im Sinne einer Traumakonfrontation wurde zum aktuellen Zeitpunkt jedoch abgesehen. Darüber hinaus stellten die Wahrnehmung und der Umgang mit Gefühlen einen wichtigen Schwerpunkt dar. Dazu führten wir zunächst Psychoedukation zum Thema Gefühle durch und versuchten Frau M. in einer differenzierteren Gefühlswahrnehmung mittels verschiedener Techniken zu unterstützen.
+                        </paragraph><paragraph>Zu einem fortgeschrittenen Zeitpunkt der Behandlung und nach erfolgreicher Stabilisierung, wurde die Aufgabe der Lebenslandkarte erneut aufgegriffen. Dabei fertigte Fr. M. zunächst einen stichpunktartigen Lebenslauf ohne emotionale Belastungsbewertung an, was ihr gut gelang. Anschließend konnten die Ereignisse in die Lebenslandkarte übertragen werden, wobei sich Frau M. erstaunt zeigte, wie viele "gute Zeiten" dabei waren. Sie gab an, dass die negativen Ereignisse zunehmend in den Hintergrund rücken würden und sie sich den positiven Aspekten des Lebens zuwenden könne.
+                        </paragraph><paragraph>Frau M. fiel es sehr schwer, sich auf die Gruppentherapie einzulassen. Sie gab an, sich als "Sonderfall" zu fühlen, den die Mitpatienten nicht verstehen könnten. Sie nahm zuverlässig, aber passiv an den Gruppensitzungen teil, eigene Themen brachte sie nicht ein. Nach und nach gelang es ihr, in Kontakt mit den Mitpatienten zu gelangen und an den sozialen Aktivitäten teilzunehmen, was zu einer positiven Gruppenstimmung beitrug. Rückblickend gab Frau M. an, trotz ihrer eher passiven Beteiligung von der Gruppentherapie profitiert zu haben, da sie z.B. im SKT neue Aspekte gelernt habe.
+                        </paragraph><paragraph>Frau M. nahm an der Themenorientierten, sowie an der Ressourcenorientierten Kunsttherapie teil. In den ersten Stunden zeigte sich das Verhaftetsein der Patienten in Bildern ihrer Vergangenheit, wobei diese vage blieben und bis zum Ende der Therapie Traumainhalte nur Andeutungsweise sichtbar wurden. Es gelang ihr im Laufe der Therapie besser im Hier und Jetzt zu bleiben und sich im bildnerischen Gestalten Themen der Gegenwart, eignen Bedürfnissen und Wünschen zu öffnen. Sehr selbstwertstärkend schien für sie das Gestalten mit Ton, es entstanden mehrere Objekte als Geschenke für ihren Partner, außerdem sei es hilfreich gewesen eine großformatige Collage mit verschiedenen Motiven und Symbolen zu gestalten. Dies schien Frau D. zum Ende der Therapie jedoch nicht mehr bewusst zu sein. So äusserte sie bilanzierend eher, es sei anstrengend gewesen, zu gestalten und sie sei froh, es nun geschafft zu haben.
+                        </paragraph><paragraph>Am Ende der Behandlung gab Frau M. an, dass ihr die Behandlung gut getan habe. Sie sei "freier im Kopf" geworden. Sie fühle sich insgesamt lockerer und entspannter und habe viele Erkenntnisse erlangt. Es sei ihr sehr schwer gefallen, sich in der Gruppe zu öffnen und sie könne nach wie vor schlecht ihre eigenen Gefühle wahrnehmen oder zum Ausdruck bringen. Sie habe jedoch viele Fortschritte gemacht und wolle nun geduldiger werden und sich Zeit geben, mit den Veränderungen umzugehen.</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3185 'Behandlungsverlauf' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3145"/>
+                    <code code="52234-2" codeSystem="2.16.840.1.113883.6.1" displayName="Medical social services treatment plan, Assessment information"/>
+                    <title>Sozialmedizinische Einschätzung</title>
+                    <text>Die Entlassung erfolgt arbeitsunfähig mit der Empfehlung zu einer zeitnahen schrittweisen Wiedereingliederung nach dem Hamburger Modell.</text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3145 'Sozialmedizinische Einschätzung' (2019-06-02T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3021"/>
+                    <code code="8648-8" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Epikrise</title>
+                    <text>Wir entlassen Frau M. nach zehnwöchiger vollstationärer traumatherapeutischer Behandlung in psychopathologisch gebessertem Zustand. Wir empfehlen die Weiterführung ihrer ambulanten Psychotherapie mit Fokus auf Affektregulationsfähigkeit sowie Fortsetzung des Abbaus angstbezogenen Vermeidungsverhaltens im Alltag. 
+                        <paragraph>Ein Nachuntersuchungstermin zur Überprüfung des Behandlungserfolgs wurde für den 29.12.2020, 10:30Uhr in unserer Klinik vereinbart. Hierfür bitten wir um die Ausstellung eines Überweisungsscheins.</paragraph>
+                        <paragraph>Wir danken für die freundliche Weiterbehandlung. Rückfragen stehen wir jederzeit gern zur Verfügung.</paragraph>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3021 'Zusammenfassung des Aufenthalts' (2013-09-16T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
+                    <templateId root="1.2.276.0.76.10.3031"/>
+                    <code code="10183-2" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Medikation bei Entlassung</title>
+                    <text>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Wirkstoff/Arzneimittel</th>
+                                    <th>Handelsname</th>
+                                    <th>Stärke</th>
+                                    <th>Form</th>
+                                    <th>Mo</th>
+                                    <th>Mi</th>
+                                    <th>Ab</th>
+                                    <th>Grund</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ID="med-11">
+                                    <td>Escitalopram</td>
+                                    <td>ESCITALOPRAM Heumann</td>
+                                    <td>10 mg</td>
+                                    <td>Filmtabletten</td>
+                                    <td ID="doscm-11">1/2</td>
+                                    <td ID="doscd-11">0</td>
+                                    <td ID="doscv-11">0</td>
+                                    <td ID="rea-11">Seele</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3031 'Medikation bei Entlassung' (2017-02-01T00:00:00) -->
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

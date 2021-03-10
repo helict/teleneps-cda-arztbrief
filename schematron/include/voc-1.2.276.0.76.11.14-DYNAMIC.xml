@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueSets>
+   <valueSet xmlns:cda="urn:hl7-org:v3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:hl7="urn:hl7-org:v3"
+             statusCode="draft"
+             id="1.2.276.0.76.11.14"
+             name="Mediatypes"
+             displayName="Medientypen"
+             effectiveDate="2014-08-25T00:00:00"
+             url="http://art-decor.org/decor/services/"
+             ident="hl7de-"
+             referencedFrom="teleneps-">
+      <sourceCodeSystem id="1.2.840.10003.5.109"
+                        identifierName=""
+                        canonicalUri="urn:oid:1.2.840.10003.5.109"
+                        canonicalUriDSTU2="urn:oid:1.2.840.10003.5.109"
+                        canonicalUriSTU3="urn:oid:1.2.840.10003.5.109"
+                        canonicalUriR4="urn:oid:1.2.840.10003.5.109"/>
+      <publishingAuthority name="Universitätsklinikum Dresden"/>
+      <conceptList>
+                <concept code="text/plain"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type text/plain"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Für beliebige Texte. Dies ist der ’default’ Typ. In dieser Form ist er identisch mit dem ST Typ</desc>
+                </concept>
+                <concept code="text/html"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type text/html"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Bestimmt für formatierte Texte in HTML Format. HTML reicht für die meisten Anwendungen aus, bei denen Layout erwünscht ist. HTML ist Plattform-unabhängig und weit verbreitet.</desc>
+                </concept>
+                <concept code="text/xml"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type text/xml"
+                  level="0"
+                  type="L"/>
+                <concept code="application/pdf"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type application/pdf"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Adobe Portable Document Format</desc>
+                </concept>
+                <concept code="image/png"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type image/png"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Portable Network Graphics (PNG, http://www.cdrom.com/pub/png) ist eine verlustfreie Komprimierung von Bilddateien. Wo vorher GIF benutzt wurde, muss jetzt PNG unterstützt werden.</desc>
+                </concept>
+                <concept code="image/jpeg"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type image/jpeg"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">Dieses Format wird benutzt für hohe Auflösungen bei Fotos und anderen Bilddateien. Die Komprimierung verläuft nicht ohne Verluste, wodurch dieses Format nicht immer geeignet ist für diagnostische Zwecke. JPEG wird vorwiegend benutzt werden für ’thumbnails’ von großen (DICOM) Dateien.</desc>
+                </concept>
+                <concept code="image/gif"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type image/gif"
+                  level="0"
+                  type="L"/>
+                <concept code="video/mpeg"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type video/mpeg"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">MPEG ist ein internationaler Standard für Videobilder. Er ist weit verbreitet und  Open-Source-Implementierungen sind verfügbar. </desc>
+                </concept>
+                <concept code="audio/mpeg"
+                  codeSystem="1.2.840.10003.5.109"
+                  displayName="Mime Type audio/mpeg"
+                  level="0"
+                  type="L">
+                    <desc language="de-DE">MPEG-1 Audio layer-3 (auch bekannt als MP3) ist momentan der Standard für komprimierte Audiodaten.</desc>
+                </concept>
+            </conceptList>
+   </valueSet>
+</valueSets>
