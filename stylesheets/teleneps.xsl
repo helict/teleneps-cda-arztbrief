@@ -131,11 +131,11 @@ body {
   display: block;
 }
 
+.emp,
 #subject {
     font-style: italic;
 }
 
-.emp,
 .tabular .label::after,
 .tabular .label,
 #subject {
@@ -261,8 +261,18 @@ body {
           <div style="width: 100%; text-align: center;">www.uniklinikum-dresden.de</div> 
           <div style="width: 100%; text-align: center;">www.tele-neps.de</div> 
         </p>
-        <p style="display: block;" class="static">
-          <div style="width: 100%; text-align: center; font-weight: bold; font-style: italic; font-size: larger;">- streng vertraulich -</div> 
+        <p style="display: block;">
+          <div style="width: 100%; text-align: center; font-weight: bold; font-style: italic; font-size: larger;">
+              <xsl:choose>
+                  <xsl:when test="/hl7:ClinicalDocument/hl7:confidentialityCode/@code='N'">
+                      <xsl:text>- normal vertraulich -</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="/hl7:ClinicalDocument/hl7:confidentialityCode/@code='V'">
+                      <xsl:text>- streng vertraulich -</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise />
+              </xsl:choose>
+          </div>
         </p>
       </aside>
     </xsl:template>
@@ -408,7 +418,21 @@ body {
                 </xsl:call-template>
                 <xsl:text>Uhr</xsl:text>
             </span>
-            <xsl:text> in unserer Behandlung befand.</xsl:text>
+            <xsl:text> in unserer </xsl:text>
+            <span class="emp">
+                <xsl:choose>
+                    <xsl:when test="/hl7:ClinicalDocument/hl7:code/@code='75443-2'">
+                        <xsl:text> ambulanten </xsl:text>
+                    </xsl:when>
+                    <xsl:when test="/hl7:ClinicalDocument/hl7:code/@code='78263-1'">
+                        <xsl:text> stationären </xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> </xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </span>
+            <xsl:text>Behandlung befand.</xsl:text>
             <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component/hl7:section" />
         </section>
       </main>
