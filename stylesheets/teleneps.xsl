@@ -136,6 +136,7 @@ body {
     font-style: italic;
 }
 
+th,
 .tabular .label::after,
 .tabular .label,
 #subject {
@@ -146,24 +147,31 @@ body {
     content: ": ";
 }
 
+table,
 .container {
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
+table,
 .tabular {
     display: table;
 }
 
+thead,
+tbody,
 .tabular .group {
     display: table-row-group;
 }
 
+tr,
 .tabular .group .row {
     display: table-row;
 }
 
+th,
+td,
 .tabular .group .row div {
     display: table-cell;
 }
@@ -442,9 +450,26 @@ body {
         <xsl:if test="hl7:title">
             <p>
                 <h4><xsl:value-of select="hl7:title" /></h4>
-                <xsl:value-of select="hl7:text" />
+                <xsl:choose>
+                    <xsl:when test="hl7:text/hl7:table">
+                        <xsl:apply-templates mode="copy" select="hl7:text" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="hl7:text" />
+                    </xsl:otherwise>
+                </xsl:choose>
             </p>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="hl7:text[child::hl7:table]" mode="copy">
+        <xsl:apply-templates select="node()" mode="copy" />
+    </xsl:template>
+
+    <xsl:template match="node()" mode="copy">
+        <xsl:copy>
+            <xsl:apply-templates select="node()" mode="copy"/>
+        </xsl:copy>
     </xsl:template>
 
     <xsl:template name="information-recipient">
