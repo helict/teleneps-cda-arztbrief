@@ -1,0 +1,171 @@
+html * {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: normal;
+  line-height: 1.25em;
+}
+
+body.draft {
+    position: relative;
+}
+
+body.draft::after {
+  content: "DRAFT";
+  position: absolute;
+  top: 40mm;
+  left: 65mm;
+  z-index: -1;
+  transform: rotate(-45deg);
+  font-size: 500%;
+  color: red;
+  font-weight: bold;
+  opacity: 15%;
+}
+
+body {
+  color: black;
+  background: white;
+  display: block;
+  padding: 5mm 0;
+  margin: 5mm auto 5mm;
+  box-shadow: 0 0 0.125cm rgba(0,0,0,0.5);
+}
+
+.din-5008 {
+  width: 210mm;
+  /*height: 297mm; */
+  height: 100%;
+}
+
+.din-5008 .header {
+  margin: 0;
+  height: 27mm;
+  min-width: 125mm;
+  display: block;
+
+  margin-left: 25mm;
+} 
+
+.din-5008 .header .logo {
+  margin-top: 5mm;
+  display: inline-block;
+}
+
+.din-5008 .header .logo img {
+  width: 33%;
+  height: 100%;
+}
+
+.din-5008 .window {
+  margin-top: 0;
+  margin-left: 20mm;
+  height: 45mm;
+  width: 85mm;
+  display: block;
+}
+
+.din-5008 .window .sender {
+  width: auto;
+  height: 5mm;
+  margin-left: 5mm;
+  display: block;
+  font-size: 50%;
+}
+
+.din-5008 .window .supplement {
+  width: auto;
+  height: 12.7mm;
+  margin-left: 5mm;
+  display: block;
+}
+
+.din-5008 .window .recipient {
+  width: auto;
+  height: 27.3mm;
+  margin-left: 5mm;
+  display: block;
+}
+
+.din-5008 .infos {
+  margin-top: -40mm;
+  margin-right: 10mm;
+  margin-left: 125mm;
+  height: 40mm;
+  min-height: 40mm;
+  width: 75mm;
+  min-width: 75mm;
+  display: block;
+  font-size: smaller;
+}
+
+.din-5008 #content {
+  margin-top: 8.46mm;
+  margin-right: 20mm;
+  margin-left: 25mm;
+  display: block;
+  line-height: 10mm;
+}
+
+.din-5008 #content #subject {
+  font-size: large;
+  padding-bottom: 1rem;
+  display: block;
+}
+
+.emp,
+#subject {
+    font-style: italic;
+}
+
+th,
+.tabular .label::after,
+.tabular .label,
+#subject {
+    font-weight: bold;
+}
+
+.label::after {
+    content: ": ";
+}
+
+table,
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+table,
+.tabular {
+    display: table;
+}
+
+thead,
+tbody,
+.tabular .group {
+    display: table-row-group;
+}
+
+tr,
+.tabular .group .row {
+    display: table-row;
+}
+
+th,
+td,
+.tabular .group .row div {
+    display: table-cell;
+}
+
+.half {
+    min-width: 50%;
+    width: 50%;
+}
+
+.fourth {
+    min-width: 25%;
+    width: 25%;
+}
+
+.static {
+  background: yellow;
+}
