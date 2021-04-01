@@ -181,6 +181,11 @@ td,
     width: 50%;
 }
 
+.fourth {
+    min-width: 25%;
+    width: 25%;
+}
+
 .static {
   background: yellow;
 }
@@ -382,13 +387,14 @@ td,
                 <div class="tabular container">
                     <div class="group">
                         <div class="row">
-                            <div class="label">Patient/in</div>
+                            <div class="label fourth">Patient/in</div>
                             <div>
+                                <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:patient/hl7:administrativeGenderCode" />
                                 <xsl:call-template name="show-name">
                                     <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:patient/hl7:name" />
                                 </xsl:call-template>
                             </div>
-                            <div class="label">Geboren am</div>
+                            <div class="label fourth">Geboren am</div>
                             <div>
                                 <xsl:call-template name="show-timestamp">
                                     <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:patient/hl7:birthTime" />
@@ -396,13 +402,13 @@ td,
                             </div>
                         </div>
                         <div class="row">
-                            <div class="label">Wohnhaft</div>
+                            <div class="label fourth">Wohnhaft</div>
                             <div>
                                 <xsl:call-template name="show-address">
                                     <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:addr" />
                                 </xsl:call-template>
                             </div>
-                            <div class="label">Aufnahme-Nr.</div>
+                            <div class="label fourth">Aufnahme-Nr.</div>
                             <div>
                                 <xsl:call-template name="show-id">
                                     <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:id"/>
@@ -444,6 +450,18 @@ td,
             <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component/hl7:section" />
         </section>
       </main>
+    </xsl:template>
+
+    <xsl:template match="hl7:administrativeGenderCode">
+        <xsl:choose>
+            <xsl:when test="@code='M'">
+                <xsl:text>Herr</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code='F'">
+                <xsl:text>Frau</xsl:text>
+            </xsl:when>
+            <xsl:otherwise />
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="hl7:component[parent::hl7:structuredBody]/hl7:section">
