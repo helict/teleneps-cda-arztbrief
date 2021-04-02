@@ -2,9 +2,14 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
                 xmlns:hl7="urn:hl7-org:v3" 
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" 
-                exclude-result-prefixes="hl7 xsi xhtml" version="1.0">
-    <xsl:import href="./cda.xsl"/>
+                xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                exclude-result-prefixes="hl7 xsi xhtml"
+                version="1.0">
+    <xsl:import href="cda.xsl"/>
+    <xsl:param name="email" select="'julia.schellong@ukdd.de'" />
+    <xsl:param name="web" select="'https://traumanetz-sachsen.de'" />
+    <xsl:param name="fon" select="'+49 (0) 351 458-7092'" />
 
     <xsl:template match="hl7:ClinicalDocument[not(ancestor::hl7:ClinicalDocument)]">
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{substring($textLangLowerCase,1,2)}">
@@ -95,10 +100,22 @@
             <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:author" mode="information-area-entry" />
           </div>
         </div>
-        <p style="display: block;" class="static">
-          <div style="width: 100%; text-align: center;">vorname.nachname@uniklinikum-dresden.de</div> 
-          <div style="width: 100%; text-align: center;">www.uniklinikum-dresden.de</div> 
-          <div style="width: 100%; text-align: center;">www.tele-neps.de</div> 
+        <p style="display: block;">
+            <xsl:if test="$email">
+                <div style="width: 100%; text-align: center;">
+                  <xsl:value-of select="concat('&#128386;&#160;', $email)" />
+                </div>
+            </xsl:if>
+            <xsl:if test="$web">
+                <div style="width: 100%; text-align: center;">
+                  <xsl:value-of select="concat('&#128423;&#160;', $web)" />
+                </div>
+            </xsl:if>
+            <xsl:if test="$fon">
+                <div style="width: 100%; text-align: center;">
+                  <xsl:value-of select="concat('&#128222;&#160;', $fon)" />
+                </div>
+            </xsl:if>
         </p>
         <p style="display: block;">
           <div style="width: 100%; text-align: center; font-weight: bold; font-style: italic; font-size: larger;">
