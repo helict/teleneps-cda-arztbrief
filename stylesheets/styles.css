@@ -116,6 +116,10 @@ body {
     font-style: italic;
 }
 
+p.section {
+    text-align: justify;
+}
+
 th,
 .tabular .label::after,
 .tabular .label,

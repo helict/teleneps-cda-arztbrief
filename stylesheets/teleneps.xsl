@@ -292,7 +292,7 @@
 
     <xsl:template match="hl7:component[parent::hl7:structuredBody]/hl7:section">
         <xsl:if test="hl7:title">
-            <p>
+            <p class="section">
                 <h4><xsl:value-of select="hl7:title" /></h4>
                 <xsl:choose>
                     <xsl:when test="hl7:text/hl7:table">
