@@ -33,7 +33,7 @@
 
   @page {
     size: A4 portrait;
-    margin: 0;
+    margin: 1cm 0;
   }
 }
 
@@ -78,8 +78,23 @@ body {
   height: 100%;
 }
 
+#footer {
+  margin-right: 20mm;
+  margin-left: 25mm;
+}
+
+#footer div {
+  margin: 3.75em 0;
+}
+
+.legal-notice {
+  font-style: italic;
+}
+
 #footer,
+#footer div,
 #header,
+#content,
 .din-5008 .supplement,
 .din-5008 .supplement .window,
 .din-5008 .supplement .window .sender,
@@ -88,7 +103,6 @@ body {
   display: block;
 }
 
-#footer,
 #header,
 .din-5008 .supplement {
   margin: 0 10mm 0 20mm;
@@ -137,18 +151,7 @@ body {
   margin-top: 8.46mm;
   margin-right: 20mm;
   margin-left: 25mm;
-  display: block;
   line-height: 10mm;
-}
-
-.din-5008 #content #subject {
-  font-size: large;
-  padding-bottom: 1rem;
-  display: block;
-}
-
-#footer {
-  font-style: italic;
 }
 
 .emp,

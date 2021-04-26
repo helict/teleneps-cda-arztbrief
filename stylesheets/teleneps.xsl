@@ -42,8 +42,16 @@
     
     <xsl:template name="footer-area">
         <footer id="footer">
-            Dieses Schreiben enthält besondere schutzbezogene Angaben, für deren Weitergabe die Voraussetzungen
-            des 203 StGB und die Festlegungen des S 9 der ärztlichen perufsordnung gelten.
+            <div class="greeting">Mit freundlichen Grüßen</div>
+            <xsl:if test="/hl7:ClinicalDocument/hl7:legalAuthenticator/hl7:assignedEntity/hl7:assignedPerson/hl7:name">
+                <xsl:call-template name="show-name-set">
+                    <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:legalAuthenticator/hl7:assignedEntity/hl7:assignedPerson/hl7:name"/>
+                </xsl:call-template>
+            </xsl:if>
+            <div class="legal-notice">
+                Dieses Schreiben enthält besondere schutzbezogene Angaben, für deren Weitergabe die
+                Voraussetzungen des 203 StGB und die Festlegungen des S 9 der ärztlichen perufsordnung gelten.
+            </div>
         </footer>
     </xsl:template>
     
