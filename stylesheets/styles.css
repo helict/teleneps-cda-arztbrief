@@ -1,10 +1,55 @@
-html * {
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-size: normal;
-  line-height: 1.25em;
+@media screen {
+  body {
+    box-shadow: 0 0 0.125cm rgba(0,0,0,0.5);
+  }
 }
 
-body.draft {
+@media print {
+  .fold1::after,
+  .fold2::after,
+  .fold3::after {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .fold1::after,
+  .fold3::after {
+    content: "__";
+  }
+  
+  .fold1::after {
+    top: 105mm;
+  }
+  
+  .fold2::after {
+    content: "____";
+    top: 148.5mm;
+  }
+  
+  .fold3::after {
+    top: 210mm;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
+
+html {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: smaller;
+}
+
+* {
+  line-height: 1.25;
+}
+
+body.draft,
+.fold1,
+.fold2,
+.fold3 {
     position: relative;
 }
 
@@ -24,77 +69,68 @@ body.draft::after {
 body {
   color: black;
   background: white;
+  margin: 0 auto;
   display: block;
-  padding: 5mm 0;
-  margin: 5mm auto 5mm;
-  box-shadow: 0 0 0.125cm rgba(0,0,0,0.5);
 }
 
 .din-5008 {
   width: 210mm;
-  /*height: 297mm; */
   height: 100%;
 }
 
-.din-5008 .header {
-  margin: 0;
-  height: 27mm;
-  min-width: 125mm;
+#footer,
+#header,
+.din-5008 .supplement,
+.din-5008 .supplement .window,
+.din-5008 .supplement .window .sender,
+.din-5008 .supplement .window .recipient,
+.din-5008 .supplement .infos {
   display: block;
-
-  margin-left: 25mm;
-} 
-
-.din-5008 .header .logo {
-  margin-top: 5mm;
-  display: inline-block;
 }
 
-.din-5008 .header .logo img {
-  width: 33%;
-  height: 100%;
+#footer,
+#header,
+.din-5008 .supplement {
+  margin: 0 10mm 0 20mm;
+  width: auto;
 }
 
-.din-5008 .window {
-  margin-top: 0;
-  margin-left: 20mm;
+#header,
+.din-5008 .supplement,
+.din-5008 .supplement .infos,
+.din-5008 .supplement .window {
   height: 45mm;
+}
+
+.din-5008 .supplement .window {
+  float: left;
+  margin: 0;
   width: 85mm;
-  display: block;
 }
 
-.din-5008 .window .sender {
+.din-5008 .supplement .window .sender {
   width: auto;
-  height: 5mm;
+  height: 17.7mm;
   margin-left: 5mm;
-  display: block;
-  font-size: 50%;
+  font-size: xx-small;
 }
 
-.din-5008 .window .supplement {
-  width: auto;
-  height: 12.7mm;
-  margin-left: 5mm;
-  display: block;
-}
-
-.din-5008 .window .recipient {
+.din-5008 .supplement .window .recipient {
   width: auto;
   height: 27.3mm;
   margin-left: 5mm;
-  display: block;
+  font-size: small;
 }
 
-.din-5008 .infos {
-  margin-top: -40mm;
-  margin-right: 10mm;
-  margin-left: 125mm;
-  height: 40mm;
-  min-height: 40mm;
+.din-5008 .supplement .infos {
+  float: right;
   width: 75mm;
-  min-width: 75mm;
-  display: block;
-  font-size: smaller;
+  margin: 0 0 0 20mm;
+  font-size: xx-small;
+}
+
+.din-5008 .supplement .infos * {
+  line-height: 1;
 }
 
 .din-5008 #content {
@@ -109,6 +145,10 @@ body {
   font-size: large;
   padding-bottom: 1rem;
   display: block;
+}
+
+#footer {
+  font-style: italic;
 }
 
 .emp,
@@ -175,6 +215,11 @@ td,
 .half {
     min-width: 50%;
     width: 50%;
+}
+
+.third {
+    min-width: 33%;
+    width: 33%;
 }
 
 .fourth {

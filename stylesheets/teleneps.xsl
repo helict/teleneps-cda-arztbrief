@@ -1,228 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-                xmlns:hl7="urn:hl7-org:v3" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                xmlns:xhtml="http://www.w3.org/1999/xhtml"
-                xmlns="http://www.w3.org/1999/xhtml"
-                exclude-result-prefixes="hl7 xsi xhtml"
-                version="1.0">
-    <xsl:import href="cda.xsl"/>
-    <xsl:param name="email" select="'julia.schellong@ukdd.de'" />
-    <xsl:param name="web" select="'https://traumanetz-sachsen.de'" />
-    <xsl:param name="fon" select="'+49 (0) 351 458-7092'" />
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                    xmlns:hl7="urn:hl7-org:v3" 
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    exclude-result-prefixes="hl7 xsi xhtml"
+                    version="1.0">
+        <xsl:import href="cda.xsl"/>
+        <xsl:param name="institution" select="'Universitaetsklinikum Carl Gustav Carus'" />
+        <xsl:param name="department" select="'Klinik und Poliklinik für Psychotherapie und Psychosomatik'" />
+        <xsl:param name="ward" select="'PSO-S1'" />
+        <xsl:param name="chief" select="'Klinikdirektor/in: Prof. Dr. med. habil. Kerstin Weidner'" />
+        <xsl:param name="logoSrc" select="'../stylesheets/logo.svg'" />
+        <xsl:param name="email" select="'julia.schellong@ukdd.de'" />
+        <xsl:param name="web" select="'https://ukdd.de'" />
+        <xsl:param name="fon" select="'0351 458-7081'" />
+        <xsl:param name="fax" select="'0351 458-6334'" />
 
-    <xsl:template match="hl7:ClinicalDocument[not(ancestor::hl7:ClinicalDocument)]">
-        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{substring($textLangLowerCase,1,2)}">
-            <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="stylesheet" type="text/css" media="all" href="../stylesheets/styles.css" />
-                <title>
-                    <xsl:call-template name="show-title"/>
-                </title>
-            </head>
-            <body class="din-5008 draft">
-                <!--<xsl:call-template name="header-area"/>-->
+        <xsl:template match="hl7:ClinicalDocument[not(ancestor::hl7:ClinicalDocument)]">
+            <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{substring($textLangLowerCase,1,2)}">
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link rel="stylesheet" type="text/css" media="all" href="../stylesheets/styles.css" />
+                    <title>
+                        <xsl:call-template name="show-title"/>
+                    </title>
+                </head>
+                <body class="din-5008 draft">
+                    <div class="fold1"></div>
+                    <div class="fold2"></div>
+                    <div class="fold3"></div>
+                    <xsl:call-template name="header-area"/>
+                    <xsl:call-template name="supplement-area"/>
+                    <xsl:call-template name="content-area"/>
+                    <xsl:call-template name="footer-area"/>
+                </body>
+            </html>
+        </xsl:template>
+
+        <xsl:template name="footer-area">
+            <footer id="footer">
+                Dieses Schreiben enthält besondere schutzbezogene Angaben, für deren Weitergabe die Voraussetzungen
+                des 203 StGB und die Festlegungen des S 9 der ärztlichen perufsordnung gelten.
+            </footer>
+        </xsl:template>
+
+        <xsl:template name="header-area">
+            <header id="header">
+                <div style="float: left; margin: 5mm auto;">
+                    <span style="font-weight: bold; font-size: x-large;">
+                        <xsl:value-of select="$institution" />
+                    </span><br/>
+                    <span style="font-size: smaller;">
+                        <span style="font-weight: bold;">
+                            <xsl:value-of select="$department" />
+                        </span><br/>
+                        <xsl:value-of select="$chief" />
+                    </span>
+                </div>
+                <div style="float: right; margin: 5mm auto; height: 27mm;">
+                    <img height="100">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="$logoSrc" />
+                        </xsl:attribute>
+                    </img>
+                </div>
+            </header>
+        </xsl:template>
+
+        <xsl:template name="supplement-area">
+            <div class="supplement">
                 <xsl:call-template name="window-area"/>
                 <xsl:call-template name="information-area"/>
-                <xsl:call-template name="content-area"/>
-            </body>
-        </html>
-    </xsl:template>
+            </div>
+        </xsl:template>
 
-    <xsl:template name="header-area">
-      <header class="header">
-        <div class="logo"><img src="../misc/logo-teleneps.png"/></div>
-        <div class="logo"><img src="../misc/logo-efre.png"/></div>
-        <div class="logo"><img src="../misc/logo-ccc.png"/></div>
-      </header>
-    </xsl:template>
+        <xsl:template name="window-area">
+        <aside class="window">
+            <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:custodian/hl7:assignedCustodian/hl7:representedCustodianOrganization" mode="window-area-sender" />
+            <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:informationRecipient" mode="window-area-recipient" />
+        </aside>
+        </xsl:template>
 
-    <xsl:template name="window-area">
-      <aside class="window">
-        <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:custodian/hl7:assignedCustodian/hl7:representedCustodianOrganization" mode="window-area-sender" />
-        <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:informationRecipient" mode="window-area-recipient" />
-      </aside>
-    </xsl:template>
-
-    <xsl:template match="hl7:representedCustodianOrganization" mode="window-area-sender">
-        <div class="sender">
-            <xsl:if test="hl7:name">
-                <xsl:value-of select="hl7:name" />
-            </xsl:if>
-            <xsl:if test="hl7:addr">
-                <xsl:text> - </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="hl7:addr/hl7:streetAddressLine">
-                        <xsl:value-of select="hl7:addr/hl7:streetAddressLine" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="concat(hl7:addr/hl7:streetName, ' ', hl7:addr/hl7:houseNumber)" />
-                    </xsl:otherwise>
+        <xsl:template match="hl7:representedCustodianOrganization" mode="window-area-sender">
+            <div class="sender">
+                <xsl:if test="hl7:name">
                     <xsl:value-of select="hl7:name" />
-                </xsl:choose>
-                <xsl:if test="hl7:addr/hl7:postalCode or hl7:addr/hl7:city">
+                </xsl:if>
+                <xsl:if test="hl7:addr">
                     <xsl:text> - </xsl:text>
-                    <xsl:if test="hl7:addr/hl7:postalCode">
-                        <xsl:value-of select="concat(hl7:addr/hl7:postalCode, ' ')" />
-                    </xsl:if>
-                    <xsl:if test="hl7:addr/hl7:city">
-                        <xsl:value-of select="hl7:addr/hl7:city" />
+                    <xsl:choose>
+                        <xsl:when test="hl7:addr/hl7:streetAddressLine">
+                            <xsl:value-of select="hl7:addr/hl7:streetAddressLine" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="concat(hl7:addr/hl7:streetName, ' ', hl7:addr/hl7:houseNumber)" />
+                        </xsl:otherwise>
+                        <xsl:value-of select="hl7:name" />
+                    </xsl:choose>
+                    <xsl:if test="hl7:addr/hl7:postalCode or hl7:addr/hl7:city">
+                        <xsl:text> - </xsl:text>
+                        <xsl:if test="hl7:addr/hl7:postalCode">
+                            <xsl:value-of select="concat(hl7:addr/hl7:postalCode, ' ')" />
+                        </xsl:if>
+                        <xsl:if test="hl7:addr/hl7:city">
+                            <xsl:value-of select="hl7:addr/hl7:city" />
+                        </xsl:if>
                     </xsl:if>
                 </xsl:if>
-            </xsl:if>
-        </div>
-    </xsl:template>
+            </div>
+        </xsl:template>
 
-    <xsl:template match="hl7:informationRecipient" mode="window-area-recipient">
-        <div class="recipient">
-          <address>
-            <xsl:call-template name="show-name">
-                <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:informationRecipient/hl7:name" />
-            </xsl:call-template><br/>
-            <xsl:call-template name="show-name">
-                <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:receivedOrganization/hl7:name" />
-            </xsl:call-template><br/>
-            <xsl:call-template name="show-address-set">
-                <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:receivedOrganization/hl7:addr"/>
-                <xsl:with-param name="sep" select="'br'"/>
-            </xsl:call-template>
-          </address>
-        </div>
-    </xsl:template>
+        <xsl:template match="hl7:informationRecipient" mode="window-area-recipient">
+            <div class="recipient">
+            <address>
+                <xsl:call-template name="show-name">
+                    <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:informationRecipient/hl7:name" />
+                </xsl:call-template><br/>
+                <xsl:call-template name="show-name">
+                    <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:receivedOrganization/hl7:name" />
+                </xsl:call-template><br/>
+                <xsl:call-template name="show-address-set">
+                    <xsl:with-param name="in" select="hl7:intendedRecipient/hl7:receivedOrganization/hl7:addr"/>
+                    <xsl:with-param name="sep" select="'br'"/>
+                </xsl:call-template>
+            </address>
+            </div>
+        </xsl:template>
 
-    <xsl:template name="information-area">
-      <aside class="infos">
-        <div class="tabular">
-          <div class="group">
-            <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:effectiveTime" mode="information-area-entry" />
-            <xsl:apply-templates select="/hl7:ClinicalDocument/hl7:author" mode="information-area-entry" />
+        <xsl:template name="information-area">
+        <aside class="infos">
+            <div class="tabular container">
+                <div class="group">
+                    <div class="row">
+                        <div class="third"></div>
+                        <div class="third"></div>
+                      <div>
+                            Universitätsklinikum<br/>
+                            Carl Gustav Carus<br/>
+                            an der Technischen<br/>
+                            Universität Dresden<br/>
+                            Fetscherstraße 74<br/>
+                            01307 Dresden<br/>
+                            Tel.: 0351 458-0<br/><br/>
+                        </div>
+                    </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Bearbeiter</div>
+                      <div>
+                          <xsl:call-template name="show-name">
+                              <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:author/hl7:assignedAuthor/hl7:assignedPerson/hl7:name" />
+                          </xsl:call-template>
+                      </div>
+                  </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Station</div>
+                      <div><xsl:value-of select="$ward" /></div>
+                  </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Telefon</div>
+                      <div><xsl:value-of select="$fon" /></div>
+                  </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Fax</div>
+                      <div><xsl:value-of select="$fax" /></div>
+                  </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Web</div>
+                      <div><xsl:value-of select="$web" /></div>
+                  </div>
+                  <div class="row">
+                        <div class="third"></div>
+                      <div class="label">Datum</div>
+                      <div>
+                          <xsl:call-template name="show-timestamp">
+                              <xsl:with-param name="in" select="/hl7:ClinicalDocument/hl7:effectiveTime" />
+                          </xsl:call-template>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <p style="display: block;">
-            <xsl:if test="$email">
-                <div style="width: 100%; text-align: center;">
-                  <xsl:value-of select="concat('&#128386;&#160;', $email)" />
-                </div>
-            </xsl:if>
-            <xsl:if test="$web">
-                <div style="width: 100%; text-align: center;">
-                  <xsl:value-of select="concat('&#128423;&#160;', $web)" />
-                </div>
-            </xsl:if>
-            <xsl:if test="$fon">
-                <div style="width: 100%; text-align: center;">
-                  <xsl:value-of select="concat('&#128222;&#160;', $fon)" />
-                </div>
-            </xsl:if>
-        </p>
-        <p style="display: block;">
-          <div style="width: 100%; text-align: center; font-weight: bold; font-style: italic; font-size: larger;">
-              <xsl:choose>
-                  <xsl:when test="/hl7:ClinicalDocument/hl7:confidentialityCode/@code='N'">
-                      <xsl:text>- normal vertraulich -</xsl:text>
-                  </xsl:when>
-                  <xsl:when test="/hl7:ClinicalDocument/hl7:confidentialityCode/@code='V'">
-                      <xsl:text>- streng vertraulich -</xsl:text>
-                  </xsl:when>
-                  <xsl:otherwise />
-              </xsl:choose>
-          </div>
-        </p>
       </aside>
-    </xsl:template>
-
-    <xsl:template match="hl7:effectiveTime" mode="information-area-entry">
-      <xsl:call-template name="information-area-entry">
-          <xsl:with-param name="label" select="'Datum'" />
-          <xsl:with-param name="value">
-              <xsl:call-template name="show-timestamp">
-                  <xsl:with-param name="in" select="current()" />
-              </xsl:call-template>
-          </xsl:with-param>
-      </xsl:call-template>
-    </xsl:template>
-
-    <xsl:template match="hl7:author" mode="information-area-entry">
-      <xsl:apply-templates select="current()/hl7:assignedAuthor/hl7:assignedPerson" mode="information-area-entry" />
-      <xsl:apply-templates select="current()/hl7:assignedAuthor/hl7:representedOrganization" mode="information-area-entry" />
-    </xsl:template>
-
-    <xsl:template match="hl7:assignedPerson" mode="information-area-entry">
-      <xsl:call-template name="information-area-entry">
-          <xsl:with-param name="label" select="'Bearbeiter'" />
-          <xsl:with-param name="value">
-              <xsl:call-template name="show-name">
-                  <xsl:with-param name="in" select="current()/hl7:name" />
-              </xsl:call-template>
-          </xsl:with-param>
-      </xsl:call-template>
-    </xsl:template>
-
-    <xsl:template match="hl7:representedOrganization" mode="information-area-entry">
-      <xsl:for-each select="current()/hl7:telecom">
-        <xsl:variable name="type" select="substring-before(@value, ':')"/>
-        <xsl:variable name="value" select="substring-after(@value, ':')"/>
-
-        <xsl:call-template name="information-area-entry">
-          <xsl:with-param name="label">
-            <xsl:if test="$type">
-                <xsl:call-template name="translateTelecomUriScheme">
-                    <xsl:with-param name="code" select="$type"/>
-                </xsl:call-template>
-                <xsl:text>.</xsl:text>
-            </xsl:if>
-            <xsl:if test="@use">
-                <xsl:text> (</xsl:text>
-                <xsl:call-template name="tokenize">
-                    <xsl:with-param name="prefix" select="'addressUse_'"/>
-                    <xsl:with-param name="string" select="@use"/>
-                    <xsl:with-param name="delimiters" select="' '"/>
-                </xsl:call-template>
-                <xsl:text>)</xsl:text>
-            </xsl:if>
-          </xsl:with-param>
-          <xsl:with-param name="value">
-            <xsl:choose>
-                <xsl:when test="$type">
-                    <xsl:value-of select="$value"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="@value"/>
-                </xsl:otherwise>
-            </xsl:choose>
-          </xsl:with-param>
-        </xsl:call-template>
-      </xsl:for-each>
-    </xsl:template>
-
-    <xsl:template match="hl7:custodian" mode="information-area-entry">
-        tbd
-    </xsl:template>
-
-    <xsl:template name="information-area-entry">
-      <xsl:param name="label" />
-      <xsl:param name="value" />
-
-      <div class="row">
-        <div style="float: right; padding-right: 3mm;">
-            <xsl:value-of select="$label" />:
-        </div>
-        <div>
-            <xsl:value-of select="$value" />
-        </div>
-      </div>
     </xsl:template>
 
     <xsl:template name="content-area">
       <main id="content">
-        <xsl:call-template name="information-recipient" />
-        <section id="subject">
-            <p>
-                <xsl:value-of select="/hl7:ClinicalDocument/hl7:title" />
-            </p>
-        </section>
         <section id="body">
             Sehr geehrte Kollegin, sehr geehrter Kollege,<br/>
             wir berichten über die Patientin oder den Patienten
@@ -334,7 +303,7 @@
     </xsl:template>
 
     <xsl:template name="information-recipient">
-        <section class="supplement">
+        <section>
             <div class="label">Nachrichtlich an</div>
                 <div class="tabular half">
                     <div class="group">
