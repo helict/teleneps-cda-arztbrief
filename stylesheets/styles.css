@@ -1,6 +1,6 @@
 @media screen {
   body {
-    box-shadow: 0 0 0.125cm rgba(0,0,0,0.5);
+    box-shadow: 0 0 0.125cm rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -12,21 +12,21 @@
     left: 0;
     z-index: -1;
   }
-  
+
   .fold1::after,
   .fold3::after {
     content: "__";
   }
-  
+
   .fold1::after {
     top: 105mm;
   }
-  
+
   .fold2::after {
     content: "____";
     top: 148.5mm;
   }
-  
+
   .fold3::after {
     top: 210mm;
   }
@@ -50,7 +50,7 @@ body.draft,
 .fold1,
 .fold2,
 .fold3 {
-    position: relative;
+  position: relative;
 }
 
 body.draft::after {
@@ -153,76 +153,76 @@ body {
 
 .emp,
 #subject {
-    font-style: italic;
+  font-style: italic;
 }
 
 p.section {
-    text-align: justify;
+  text-align: justify;
 }
 
 th,
 .tabular .label::after,
 .tabular .label,
 #subject {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .label::after {
-    content: ": ";
+  content: ": ";
 }
 
 table,
 th,
 td {
-    padding: .1em;
-    border-collapse: collapse;
-    border: 1px solid black;
+  padding: 0.1em;
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 
 th {
-    background: lightgrey;
+  background: lightgrey;
 }
 
 table,
 .container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 table,
 .tabular {
-    display: table;
+  display: table;
 }
 
 thead,
 tbody,
 .tabular .group {
-    display: table-row-group;
+  display: table-row-group;
 }
 
 tr,
 .tabular .group .row {
-    display: table-row;
+  display: table-row;
 }
 
 th,
 td,
 .tabular .group .row div {
-    display: table-cell;
+  display: table-cell;
 }
 
 .half {
-    min-width: 50%;
-    width: 50%;
+  min-width: 50%;
+  width: 50%;
 }
 
 .third {
-    min-width: 33%;
-    width: 33%;
+  min-width: 33%;
+  width: 33%;
 }
 
 .fourth {
-    min-width: 25%;
-    width: 25%;
+  min-width: 25%;
+  width: 25%;
 }
