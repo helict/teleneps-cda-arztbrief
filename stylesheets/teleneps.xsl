@@ -279,13 +279,13 @@
     <xsl:template match="hl7:component[parent::hl7:structuredBody]/hl7:section">
         <xsl:if test="hl7:title">
             <p class="section">
-                <h4><xsl:value-of select="hl7:title" /></h4>
+                <h3><xsl:value-of select="hl7:title" /></h3>
                 <xsl:choose>
                     <xsl:when test="hl7:text/hl7:table">
                         <xsl:apply-templates mode="copy" select="hl7:text" />
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="hl7:text" />
+                        <xsl:apply-templates select="hl7:text" />
                     </xsl:otherwise>
                 </xsl:choose>
             </p>
