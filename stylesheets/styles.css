@@ -19,21 +19,21 @@
   }
 
   .fold1::after {
-    top: 105mm;
+    top: 95mm; /*105mm*/
   }
 
   .fold2::after {
     content: "____";
-    top: 148.5mm;
+    top: 138.5mm; /*148.5mm*/
   }
 
   .fold3::after {
-    top: 210mm;
+    top: 200mm; /*210mm*/
   }
 
   @page {
     size: A4 portrait;
-    margin: 1cm 0;
+    margin: 10mm 0;
   }
 }
 
@@ -124,7 +124,7 @@ body {
 
 .din-5008 .supplement .window .sender {
   width: auto;
-  height: 17.7mm;
+  height: 10.7mm; /*17.7mm reduced because of print margin top/bottom*/
   margin-left: 5mm;
   font-size: xx-small;
 }
