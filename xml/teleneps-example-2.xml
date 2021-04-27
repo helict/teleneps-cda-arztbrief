@@ -467,6 +467,17 @@
             </component>
             <component typeCode="COMP" contextConductionInd="true">
                 <section>
+                    <templateId root="1.2.276.0.76.10.5182"/>
+                    <code code="29544-4" codeSystem="2.16.840.1.113883.6.1" displayName="Test"/>
+                    <title>Test</title>
+                    <text>52-jährige Frau, guter Allgemein- und Ernährungszustand, Größe 154 cm, Gewicht: 52 kg, BMI: 21, Haut und Schleimhäute: reizlose Narbe bei Z.n. CCE, Koordination: Blindgang: unsicher, Seiltänzergang: unsicher, sonstiger klinischer und neurologischer Status unauffällig.
+                        <paragraph>D: anamnestisch rezid. wechselnd rechts- oder linksbetonte Paraspastik, bildmorph. und in MEP und SSEPs sowie Liquorpunktion unauffällig, a.e. dissoziativ, fokale Epilepsie mit dyskognitiven Anfällen, Migräne, Asthma bronchiale, Vit B12 Mangel, Nahrungsmittelunverträglichkeiten von Pat. beschrieben, die jedoch fluktuierend zu sein scheinen</paragraph>
+                   </text>
+                </section>
+                <!-- template 1.2.276.0.76.10.3182 'Körperlicher Befund bei Aufnahme' (2020-12-18T00:00:00) -->
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section>
                     <templateId root="1.2.276.0.76.10.3182"/>
                     <code code="29544-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physical findings"/>
                     <title>Körperlicher Befund bei Aufnahme</title>
