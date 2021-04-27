@@ -2,33 +2,47 @@
   body {
     box-shadow: 0 0 0.125cm rgba(0, 0, 0, 0.5);
   }
+
+  .print-footer {
+    display: none;
+  }
 }
 
 @media print {
-  .fold1::after,
-  .fold2::after,
-  .fold3::after {
-    position: absolute;
+  .mark1::after,
+  .mark2::after,
+  .mark3::after {
+    position: fixed;
     left: 0;
     z-index: -1;
   }
 
-  .fold1::after,
-  .fold3::after {
+  .mark1::after,
+  .mark3::after {
     content: "__";
   }
 
-  .fold1::after {
+  .mark1::after {
     top: 95mm; /*105mm*/
   }
 
-  .fold2::after {
+  .mark2::after {
     content: "____";
     top: 138.5mm; /*148.5mm*/
   }
 
-  .fold3::after {
+  .mark3::after {
     top: 200mm; /*210mm*/
+  }
+  
+  .print-footer {
+    border-top: 1pt solid black;
+    font-size: xx-small;
+    text-align: left;
+    line-height: .75;
+    margin:5mm 20mm 0 25mm;
+    padding: 1mm 1mm 0 1mm;
+    height: 10mm;
   }
 
   @page {
@@ -46,24 +60,12 @@ html {
   line-height: 1.25;
 }
 
-body.draft,
-.fold1,
-.fold2,
-.fold3 {
-  position: relative;
-}
-
-body.draft::after {
-  content: "DRAFT";
-  position: absolute;
-  top: 40mm;
-  left: 65mm;
-  z-index: -1;
-  transform: rotate(-45deg);
-  font-size: 500%;
-  color: red;
-  font-weight: bold;
-  opacity: 15%;
+.print-frame,
+.print-frame tr,
+.print-frame td {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 body {
@@ -151,7 +153,6 @@ body {
   margin-top: 8.46mm;
   margin-right: 20mm;
   margin-left: 25mm;
-  line-height: 10mm;
 }
 
 .emp,

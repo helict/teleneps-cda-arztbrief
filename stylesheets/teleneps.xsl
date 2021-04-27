@@ -28,14 +28,33 @@
                     <xsl:call-template name="show-title"/>
                 </title>
             </head>
-            <body class="din-5008 draft">
-                <div class="fold1"></div>
-                <div class="fold2"></div>
-                <div class="fold3"></div>
-                <xsl:call-template name="header-area"/>
-                <xsl:call-template name="supplement-area"/>
-                <xsl:call-template name="content-area"/>
-                <xsl:call-template name="footer-area"/>
+            <body class="din-5008">
+                <div class="mark1"></div>
+                <div class="mark2"></div>
+                <div class="mark3"></div>
+
+                <table class="print-frame" border="0" padding="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <xsl:call-template name="header-area"/>
+                                <xsl:call-template name="supplement-area"/>
+                                <xsl:call-template name="content-area"/>
+                                <xsl:call-template name="footer-area"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <div class="print-footer">
+                                    Vorstand: Prof. Dr. med. D. Michael Albrecht (Sprecher): Janko Haft ▪ Vorsitzender des Aufsichtsrates: Prof. Dr. G. Brunner<br/>
+                                    Arztbrief, PSO Psychotherapie und Psychosomatik, nicht vidiert
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </body>
         </html>
     </xsl:template>
