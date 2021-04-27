@@ -288,11 +288,14 @@
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Diagnosen'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3027']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Beschwerdebild und (Beschwerde-) Entwicklung'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3139']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
+        <h2>Psychotherapeutische, psychosomatische und psychiatrische Anamnese</h2>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Biografische Anamnese'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3176']" />
@@ -325,6 +328,7 @@
             <xsl:with-param name="title" select="'Psychotherapeutische, psychosomatische und psychiatrische Vorbehandlung'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3179']" />
         </xsl:call-template>
+        <h2>Organmedizinische Anamnese</h2>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Eigenanamnese'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3180']" />
@@ -357,6 +361,7 @@
             <xsl:with-param name="title" select="'Medikation bei Aufnahme'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3029']" />
         </xsl:call-template>
+        <h2>Befunde</h2>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Körperlicher Befund bei Aufnahme'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3182']" />
@@ -381,6 +386,7 @@
             <xsl:with-param name="title" select="'Testpsychologische Diagnostik'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3144']" />
         </xsl:call-template>
+        <h2>Behandlung</h2>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Behandlungseinheiten'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3032']" />
@@ -396,28 +402,40 @@
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Weitere empfohlene Maßnahmen'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3033']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Sozialmedizinische Einschätzung'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3145']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Zusammenfassung'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3021']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
         <xsl:call-template name="section">
             <xsl:with-param name="title" select="'Entlassungsmedikation'" />
             <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3031']" />
+            <xsl:with-param name="isSubSection" select="false()" />
         </xsl:call-template>
     </xsl:template>
     
     <xsl:template name="section">
         <xsl:param name="title" />
         <xsl:param name="section" />
+        <xsl:param name="isSubSection" select="true()" />
 
         <xsl:if test="$section">
             <p class="section">
-                <h3><xsl:value-of select="$title" /></h3>
+                <xsl:choose>
+                    <xsl:when test="$isSubSection">
+                        <h3><xsl:value-of select="$title" /></h3>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <h2><xsl:value-of select="$title" /></h2>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:choose>
                     <xsl:when test="$section/hl7:text/hl7:table">
                         <xsl:apply-templates mode="copy" select="$section/hl7:text" />
