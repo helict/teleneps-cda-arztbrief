@@ -69,7 +69,7 @@
             </xsl:if>
             <div class="legal-notice">
                 Dieses Schreiben enthält besondere schutzbezogene Angaben, für deren Weitergabe die
-                Voraussetzungen des 203 StGB und die Festlegungen des S 9 der ärztlichen perufsordnung gelten.
+                Voraussetzungen des &#167;203 StGB und die Festlegungen des &#167;9 der ärztlichen Berufsordnung gelten.
             </div>
         </footer>
     </xsl:template>
