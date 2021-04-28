@@ -140,7 +140,7 @@ body {
 
 .din-5008 .supplement .infos {
   float: right;
-  width: 75mm;
+  width: 70mm; /*75mm but reduced due prevent overlapping*/
   margin: 0 0 0 20mm;
   font-size: xx-small;
 }

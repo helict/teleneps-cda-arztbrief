@@ -5,7 +5,7 @@
                 xmlns:xhtml="http://www.w3.org/1999/xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 exclude-result-prefixes="hl7 xsi xhtml"
-                version="27mm1.0">
+                version="1.0">
     <xsl:import href="cda.xsl"/>
     <xsl:param name="institution" select="'Universitätsklinikum Carl Gustav Carus'" />
     <xsl:param name="department" select="'Klinik und Poliklinik für Psychotherapie und Psychosomatik'" />
@@ -383,7 +383,7 @@
                 <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3024']" />
             </xsl:call-template>
             <xsl:call-template name="section">
-                <xsl:with-param name="title" select="Vegetative Anamnese'" />
+                <xsl:with-param name="title" select="'Vegetative Anamnese'" />
                 <xsl:with-param name="section" select="hl7:component/hl7:section[hl7:templateId/@root='1.2.276.0.76.10.3143']" />
             </xsl:call-template>
             <xsl:call-template name="section">
